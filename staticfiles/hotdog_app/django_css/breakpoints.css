@@ -1,0 +1,192 @@
+/* Standard Portrait Sizes */
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 480px) {
+    /* Styles for phones */
+    .pic-title{
+        font-size: 6vw;
+    }
+    .pic-description {
+        padding: 0.3rem;
+        font-size: 4vw;
+    }
+}
+  
+/* Small devices (landscape phones and tablets, 481px and up) */
+@media (min-width: 481px) and (max-width: 767px) {
+    /* Styles for landscape phones and small tablets */
+        /* Styles for phones */
+    .pic-title{
+        font-size: 6vw;
+    }
+    .pic-description {
+        padding: 0.3rem;
+        font-size: 4vw;
+    }
+}
+  
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for tablets */
+    /* Styles for phones */
+    .pic-title{
+        font-size: 7vw;
+    }
+    .pic-description {
+        padding: 0.3.5rem;
+        font-size: 4vw;
+    }
+}
+  
+
+
+
+
+/* Large devices (laptops/desktops, 1025px and up) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* Styles for laptops and desktops */
+    .pic-title{
+        font-size: 4vw;
+    }
+    .pic-description {
+        padding: 0.3.5rem;
+        font-size: 2.5vw;
+    }
+}
+  
+/* Extra large devices (large desktops, 1441px and up) */
+@media (min-width: 1441px) {
+    /* Styles for large desktops */
+    .pic-title{
+        font-size: 5vw;
+    }
+    .pic-description {
+        padding: 0.3.5rem;
+        font-size: 3.5vw;
+    }
+}
+
+
+
+
+
+
+
+/* Lanscape Orientation */
+
+/* general rules */
+@media (orientation: landscape) {
+    .pic-description::-webkit-scrollbar{
+        width: 1.5vh; /* width of the vertical scroll */
+        height: 1.5vh; /* height of horizontal scroll */
+    }
+  
+    .pic-description::-webkit-scrollbar-track{
+        background: var(--red-004);
+        border-radius: 100vh; /* rounded scrollbar ends */
+        margin-block: 0.5vw; /* small margin between scroll bar and element */
+    }
+
+    .pic-description::-webkit-scrollbar-thumb {
+        background: var(--lt-003);
+        border: 0.3vw solid var(--red-004);
+        border-radius: 100vh; /* rounded pill shap */
+    }
+
+    .pic-description::-webkit-scrollbar-thumb.hover {
+        background: hsl(120 100% 10% / 1);
+    }
+
+
+    /* Firefox */
+    @supports (-moz-appearance: none){
+        .pic-description{
+            /* Make the pill green and the track invisible (clashes with elements rounded edges) */
+            scrollbar-color: hsl(120 75% 50% / 1)  hsl(120 100% 20% / 1); 
+            scrollbar-width: auto;
+
+            border-radius: 0.8vh;
+        }
+    }
+
+
+
+    
+    /* svgBeermat rules */
+    .beermat-container{
+        height: 96vh;
+        width: 96vh;
+        aspect-ratio: 1/1;
+        padding: 1vw;
+        border-radius: 3vw;
+    }
+    .pic-title{
+        font-size: 3vw;
+    }
+
+    .pic-description {
+        font-size: 2vw;
+    }
+
+    .fade-effect {
+        height: 4vh;       
+    }
+
+}
+
+
+
+/* Small Mobile Landscape (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+    /* Styles for small mobile devices in landscape */
+}
+  
+/* Medium Devices Landscape (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    /* Styles for medium tablets in landscape */
+}
+  
+/* Large Tablets / Small Laptops Landscape (1025px to 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+    /* Styles for large tablets or small laptops in landscape */
+    .pic-title{
+        font-size: 3.5vw;
+    }
+
+    .pic-description {
+        font-size: 2.5vw;
+    }
+}
+  
+/* Laptops and Desktops Landscape (1281px to 1440px) */
+@media (min-width: 1281px) and (max-width: 1440px) and (orientation: landscape) {
+    /* Styles for laptops and desktops in landscape */
+    .pic-title{
+        font-size: 4vw;
+    }
+
+    .pic-description {
+        font-size: 3vw;
+    }
+}
+  
+/* Large Desktops Landscape (1441px and up) */
+@media (min-width: 1441px) and (orientation: landscape) {
+    /* Styles for large desktops in landscape */
+    .pic-title{
+        font-size: 4vw;
+    }
+
+    .pic-description {
+        font-size: 3vw;
+    }
+}
+
+
+
+
+
