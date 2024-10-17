@@ -33,8 +33,8 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'http://jeffers.pythonanywhere.com',
-    'http://localhost:5173/',
+    'jeffers.pythonanywhere.com',
+    'localhost:5173/',
     '127.0.0.1',
 ]
 
