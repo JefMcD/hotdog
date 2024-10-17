@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block title %}
+        {% endblock %}
+
+        {% block css %}
+        {% endblock %}
+    </head>
+    
+    <body>
+        <div class='main-window-wrapper'>
+            {% block center_panel %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>
+
+

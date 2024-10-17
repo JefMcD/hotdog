@@ -1,0 +1,32 @@
+:root{
+    --general_text: comic_text, comic_text_backup, Arial, sans-serif;
+    --title1: comic_title, bladerunner, Arial, sans-serif;
+}
+
+
+
+@font-face{
+    font-family: comic_title;
+    src: url('/static/hotdog_app/fonts/woff2/BADABB.woff2') format(woff2);
+    src: url('/static/hotdog_app/fonts/woff/BADABB.woff') format(woff);
+    src: url('/static/hotdog_app/fonts/tiff/BADABB.ttf') format(tiff)
+}
+@font-face {
+    font-family: bladerunner;
+    src: url('/static/hotdog_app/fonts/woff2/spantaran.woff2') format(woff2); 
+}
+
+@font-face {
+    font-family: comic_text;
+    src: url('/static/hotdog_app/fonts/woff2/Cutie_Patootie.woff2') format(woff2);
+    src: url('/static/hotdog_app/fonts/woff/Cutie_Patootie.woff') format(woff);
+    src: url('/static/hotdog_app/fonts/tiff/Cutie_Patootie.ttf') format(tiff);
+}
+
+@font-face {
+    font-family: comic_backup_text;
+    src: url('/static/hotdog_app/fonts/woff2/comici.woff2') format(woff2);
+    src: url('/static/hotdog_app/fonts/woff/comici.woff') format(woff);
+    src: url('/static/hotdog_app/fonts/tiff/comici.ttf') format(tiff);
+}
+

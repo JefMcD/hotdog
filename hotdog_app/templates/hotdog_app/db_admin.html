@@ -1,0 +1,109 @@
+{% extends "hotdog_app/db_admin_layout.html" %}
+{%load static%}
+
+{% block title %}
+    <Title>DB Admin</Title>
+{% endblock %}
+
+{% block css %}
+    <link href="{% static 'hotdog_app/db/db_theme.css' %}" rel="stylesheet">
+    <link href="{% static 'hotdog_app/db/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'hotdog_app/db/general.css' %}" rel="stylesheet">
+    <link href="{% static 'hotdog_app/db/svgBeermat.css' %}" rel="stylesheet">
+    <link href="{% static 'hotdog_app/db/DB_admin.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block center_panel %}
+
+    <section class='db-admin-wrapper'>
+
+        <h1> DB Admin </h1>
+
+        <div class="main-center-stage">
+            <div class = 'restart-wrapper'>
+                <div class='db-button-row'>
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Reset To Bassline</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class='db-button-row'>  
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Users</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Reset SU</span>
+
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Text Posts</span>
+                        </div>
+                    </a>    
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Inactive</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:insert_images' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Insert Images</span>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class='db-button-row'>
+                    <a href="{% url 'hotdog_app:delete_all' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Delete All</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Inactive</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:inactive' %}">
+                        <div class="curtain-btn db-button db-delete">
+                            <div class="curtain-btn-hover-state" ></div>
+                        <span>Inactive</span>
+                        </div>
+                    </a>
+                </div>
+                <div class='db-button-row'>
+                    <div class='footer'>{{message}}</div>
+                </div>
+            </div>
+
+        </div>
+    
+    </section>
+    
+ 
+    
+
+
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends "hotdog_app/main_layout.html" %}
+{% load static %}
+
+{% block title %}
+    Hotdog Art Gallery
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/fonts.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/theme.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/svg_icons.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/general.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/svgBeermat.css' %}?v0.001">
+    <link rel="stylesheet" href="{% static 'hotdog_app/django_css/breakpoints.css' %}?v0.001">
+{% endblock %}
+
+
+{% block hotdog_app %}
+    <div id="root">
+        <!-- React App Injected Here -->
+    </div>
+{% endblock%}
+
+
+{% block script %}
+    <script src="{% static 'hotdog_app/react_frontend/build/index.js' %}"></script>
+
+    <!-- Import GSAP Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+{% endblock %}

@@ -1,0 +1,148 @@
+/* Global DOM root */
+:root {
+  font-family: var(--general_text);
+  font-size: 1.3em;
+  
+  line-height: 1.2;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--lt-001);
+  background-color: var(--black-001);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  scroll-behavior: smooth;
+}
+
+
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items:flex-start;
+
+
+}
+/* index.html root id element */
+#root { 
+  background-color: var(--black-001);
+  /* border: 2px solid red; */
+}
+
+
+
+/* links */
+a{
+  text-decoration: none;
+  color: var(--white-001);
+  cursor: pointer;
+
+  transition: color 350ms ease-in-out;
+}
+a:hover,a:focus,a:target {
+  color: var(--blu-004);
+}
+
+
+/* general element default settings */
+ul {
+  list-style: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select,
+section {
+  font: inherit;
+}
+
+fieldset{
+  /* over-ride Django/Bootstrap styles in forms */
+  border: 0;
+  border-radius: 0;
+}
+
+
+  /*  Holding down the mouse and selecting text. These are the colors */
+  ::-moz-selection { /* Code for Firefox */
+    color:var(--lt-001);
+    background: var(--red-004);
+  }
+  
+  ::selection {
+    color:var(--lt-001);
+    background: var(--red-004);
+  }
+
+
+
+
+
+
+  /************************** Scrollbars **************************/
+  /* Chrome Edge, Safari, Opera, Brave                            */
+  /*                                                              */
+  /* Fancy scrollbars applied only to the pic-description element */
+  /*                                                              */
+  /* To apply to all have pseudo element on its own               */
+  /****************************************************************/
+
+.pic-description::-webkit-scrollbar{
+  width: 1.5vw; /* width of the vertical scroll */
+  height: 1.5vw; /* height of horizontal scroll */
+
+}
+
+.pic-description::-webkit-scrollbar-track{
+  background: var(--red-004);
+  border-radius: 100vw; /* rounded scrollbar ends */
+  margin-block: 0.5rem; /* small margin between scroll bar and element */
+}
+
+.pic-description::-webkit-scrollbar-thumb {
+  background: var(--lt-003);
+  border: 0.3vw solid var(--red-004);
+  border-radius: 100vw; /* rounded pill shap */
+}
+
+.pic-description::-webkit-scrollbar-thumb.hover {
+  background: hsl(120 100% 10% / 1);
+}
+
+
+/* Firefox */
+/* uses @supports to check if the browser supports a firefox only tag */
+/* This is a hack to check if the user is using Firefox browser */
+/* This then configures Firefox scrollbars */
+@supports (-moz-appearance: none){
+  .pic-description{
+    /* Make the pill green and the track invisible (clashes with elements rounded edges) */
+    scrollbar-color: hsl(120 75% 50% / 1)  hsl(120 100% 20% / 1); 
+    scrollbar-width: auto;
+
+    border-radius: 0.8vw;
+  }
+}
+
+
+
+
+
+  

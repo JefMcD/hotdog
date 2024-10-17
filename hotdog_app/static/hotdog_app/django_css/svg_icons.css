@@ -1,0 +1,144 @@
+
+
+
+
+#prev-button-path{
+    opacity:1;
+    fill:#ffeccb;
+    fill-opacity:1;
+    stroke:#aa0000;
+    stroke-width:0.797995;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dasharray:none;
+    stroke-dashoffset:190.753;
+
+    transition: fill 250ms ease-in-out;
+}
+
+#prev-button-path:hover{
+  fill: var(--red-002)
+}
+
+#next-button-path{
+  opacity:1;
+  fill:#ffeccb;
+  fill-opacity:1;
+  stroke:#aa0000;
+  stroke-width:0.800545;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:20.8;
+  stroke-dasharray:none;
+  stroke-dashoffset:190.753;
+
+  transition: fill 250ms ease-in-out;
+}
+
+#next-button-path:hover{
+  fill: var(--red-002)
+}
+
+
+
+/* star spinner */
+.loading-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:20vh auto;
+
+    width: 30vw;
+    aspect-ratio: 1/1;
+
+    /* border: 2px solid black; */
+}
+
+.svg-star-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    /* border: 2px solid red; */
+
+    animation:  spin 1000ms infinite linear,
+                grow 2000ms infinite ease-in-out; 
+}
+
+.svg-star-icon svg{
+
+    width: 5rem;
+    height: 5rem;
+}
+
+
+#path1-star-spinner{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:0.113169;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+
+}
+
+.loading-message{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--gerneral-text);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+
+    animation:  pulse 1000ms infinite ease-in-out;
+}
+
+
+@keyframes pulse{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+  }
+
+@keyframes grow{
+    0% {
+        width: 6rem;
+        height: 6rem;
+    }
+    50% {
+        width: 10rem;
+        height: 10rem;
+    }
+    100% {
+        width: 6rem;
+        height: 6rem;
+    }
+}
+
+/* end star-spinner
+
+
+
