@@ -3,6 +3,7 @@ from .models import *
 from django.conf import settings
 from django.core.files import File
 import os
+import stat
 
 
 
@@ -40,7 +41,7 @@ def install_images():
             },
     ]
     # set path to images folder
-    image_folder = os.path.join(settings.MEDIA_ROOT, 'images/pics')
+    image_folder = os.path.join(settings.MEDIA_ROOT, 'images/pics') # default images to be loaded into DB
     print (f"---------> MEDIA_ROOT = {settings.MEDIA_ROOT}")
     print (f"---------> BASE_DIR = {settings.BASE_DIR}")
     print (f"---------> image_folder = {image_folder}")
@@ -68,7 +69,13 @@ def install_images():
                 
                 # Save the image to the Artworks model
                 new_pic.picture.save(pic['imgName'], new_image_file)
-            order_number += 1
+                
+                # pic being saved on pythonanywhere hotdog_app_media/flipper_images
+                # pic save 'locked' --w----r-T making it unreadable to the app
+                # Set file permissions to be more accessible (e.g., 644)
+                image_path = os.path.join(settings.MEDIA_ROOT, 'flipper_images', pic['imgName']) # MEDIA image
+                os.chmod(image_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)  # 644 permissions
+                order_number += 1
         else:
             print(f"image_path does not exist: {image_path}")
 
