@@ -22,7 +22,9 @@ urlpatterns = [
 
     # db_admin paths
     path('db_admin', db_admin.db_admin, name='db_admin'),
-    path('insert_images', db_admin.insert_images, name='insert_images'),
+    path('occult_images', db_admin.occult_images, name='occult_images'),
+    path('music_images', db_admin.music_images, name='music_images'),
+    path('arch_images', db_admin.arch_images, name='arch_images'),
     path('delete_all', db_admin.delete_all, name='delete_all'),  
     path('inactive', db_admin.inactive, name='inactive'), 
 ]
