@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="shortcut icon" href="#">
+        <title>{% block title %}Login{% endblock %}</title>
+
+         <link href="{% static 'hotdog_app/db/login.css' %}" rel="stylesheet"> 
+         <link href="{% static 'hotdog_app/db/db_theme.css' %}" rel="stylesheet">
+         <link href="{% static 'hotdog_app/db/fonts.css' %}" rel="stylesheet">
+         <link href="{% static 'hotdog_app/db/general.css' %}" rel="stylesheet">
+         <link href="{% static 'hotdog_app/db/svgBeermat.css' %}" rel="stylesheet">
+         <link href="{% static 'hotdog_app/db/DB_admin.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class='db-admin-container'>
+
+            <div class="authenticate-main-wrapper">
+
+                <div class = "authenticate-logo-wrapper">
+                    <img src="{% static 'hotdog_app/images/logos/jeffers1.png' %}">
+                </div>
+        
+                <div class = "site-enerjon">
+                    <div class="hotdog_app-title">Hotdog</div>
+                    <div class="tagline">Pictures Organiser</div>
+                </div>
+
+                {% block authenticate_panel %}
+                {% endblock %}
+            </div>
+
+        </div>
+    </body>
+</html>

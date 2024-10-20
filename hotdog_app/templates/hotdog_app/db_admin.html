@@ -24,10 +24,17 @@
 
 
                 <div class='db-button-row'>
-                    <a href="{% url 'hotdog_app:delete_all' %}">
+                    <a href="{% url 'hotdog_app:logout_view' %}">
                         <div class="curtain-btn db-button">
                             <div class="curtain-btn-hover-state" ></div>
-                            <span>Reset</span>
+                            <span>Logout</span>
+                        </div>
+                    </a>
+
+                    <a href="{% url 'hotdog_app:index' %}">
+                        <div class="curtain-btn db-button">
+                            <div class="curtain-btn-hover-state" ></div>
+                            <span>Return</span>
                         </div>
                     </a>
                 </div>

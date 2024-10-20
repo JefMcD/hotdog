@@ -6,10 +6,7 @@ from . import db_admin
 app_name = 'hotdog_app'
 urlpatterns = [
     # views paths
-    path("", views.entry, name="entry"),
-    path("register", views.register, name="register"),
-    path("login", views.login, name="login"),
-    path("logout", views.logout, name="logout"),
+    path("", views.index, name='index'),
     path("index", views.index, name='index'),
     
     # API
@@ -17,11 +14,14 @@ urlpatterns = [
     path("get_next_pic/<int:image_order_num>", views.get_next_pic, name = "get_next_pic"),   
     path("get_prev_pic/<int:image_order_num>", views.get_prev_pic, name = "get_prev_pic"), 
  
-   #  re_path(r'^.*$', views.index, name='index'),  # Catch-all URL for React routes
-
+    # re_path(r'^.*$', views.index, name='index'),  # Catch-all URL for React routes
 
     # db_admin paths
+    # path("register", views.register, name="register"),
     path('db_admin', db_admin.db_admin, name='db_admin'),
+    path("login", db_admin.login_view, name="login_view"),
+    path("logout", db_admin.logout_view, name="logout_view"),
+
     path('occult_images', db_admin.occult_images, name='occult_images'),
     path('music_images', db_admin.music_images, name='music_images'),
     path('arch_images', db_admin.arch_images, name='arch_images'),

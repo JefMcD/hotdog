@@ -53,59 +53,18 @@ from django.core.files.images import ImageFile
     path("index", views.index, name='index'),
 '''
 
-def entry(request):
-    return render(request, "hotdog_app/index.html")
 
-def register(request):
-    return render(request, "hotdog_app/index.html")
-
-def login(request):
-    return render(request, "hotdog_app/index.html")
-
-def logout(request):
-    return render(request, "hotdog_app/index.html")
 
 def index(request):
     return render(request, "hotdog_app/index.html")
 
 
 
-db_images = [
-        { 'id': uuid.uuid4(),
-        'imgName' : 'cthulu-girl-1000.jpg',
-        'title' : 'Cthulu Ghirl',
-        'description' : 'Octupus haor girl has much on her mind, what with all the scandals and persecutions that have been going on especially since world war three broke out'
-        },
-    
-        { 'id': uuid.uuid4(),
-        'imgName' : 'infinity-eternity-1000.jpg',
-        'title' : 'Infinity Eternity',
-        'description' : 'Space the final frontier ?'
-        },
-    
-        { 'id': uuid.uuid4(),
-        'imgName' : './invocation-1000.jpg',
-        'title' : 'Invocation',
-        'description ': 'Summoning the avatar'
-        },
-
-        { 'id': uuid.uuid4(),
-        'imgName' : 'celtic-v-rangers-1000.jpg',
-        'title' : 'Celtic Fans',
-        'description' : 'Sunday Football Fams on New Years Day'
-        },    
-    
-        { 'id': uuid.uuid4(),
-        'imgName' : 'Rivers-Underworld-1000.jpg',
-        'title' : 'Rivers Of The Underworld',
-        'description' : 'Time travel is not so easy'
-        },
-    ]
 @csrf_exempt
 def get_first_pic(request):
     print(f"Django: get_pics()")
     print(f"Return first image in the database")
-    time.sleep(2)
+    time.sleep(1)
     
     if request.method == 'GET':
         print(f"received GET request: OK")

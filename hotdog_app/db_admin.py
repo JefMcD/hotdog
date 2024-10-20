@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 from django.shortcuts import render
 from django.urls import reverse
+from django.core.cache import cache
 
 # Maths
 import random
@@ -28,9 +29,45 @@ import os
 from .DB_init_flipper import install_images
 
 
-def db_admin(request):
-    return render(request, 'hotdog_app/db_admin.html')
 
+def db_admin(request):
+    # If user is authenticated load db_admin
+    if request.user.is_authenticated:
+        return render(request, "hotdog_app/db_admin.html")
+    else:
+        # load login
+        return render(request, "hotdog_app/verify/login.html")
+
+
+
+def login_view(request):
+    if request.method == "POST":
+
+        # Attempt to sign user in
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = authenticate(request, username=username, password=password)
+
+        # Check if authentication successful
+        if user is not None:
+            login(request, user)
+            return HttpResponseRedirect(reverse("hotdog_app:db_admin"))
+        else:
+            return render(request, "hotdog_app/verify/login.html", 
+                            {"message": "Invalid username and/or password."
+            })
+    else:
+        return render(request, "hotdog_app/verify/login.html")
+
+
+def logout_view(request):      
+    print(f"Logging Out")
+    logout(request)
+    return HttpResponseRedirect(reverse("hotdog_app:index"))
+
+
+
+@login_required
 def occult_images(request):
     occult_images_data = [
         {
@@ -89,14 +126,15 @@ def occult_images(request):
         good = install_images(occult_images_data, images_folder_path)
         message = 'Pictures Installed' if good else 'Error installing pictures'
 
-        return render(request,'hotdog_app/db_admin.html', {'message':message})
+    cache.clear() # Fetch new images
+    return render(request,'hotdog_app/db_admin.html', {'message':message})
 
 
 
 
 
 
-
+@login_required
 def music_images(request):
     music_images_data = [
 
@@ -147,8 +185,11 @@ def music_images(request):
         good = install_images(music_images_data, images_folder_path)
         message = 'Pictures Installed' if good else 'Error installing pictures'
 
-        return render(request,'hotdog_app/db_admin.html', {'message':message})
-
+    cache.clear()
+    return render(request,'hotdog_app/db_admin.html', {'message':message})
+    
+    
+@login_required
 def arch_images(request):
     arch_images_data = [
         {
@@ -162,13 +203,12 @@ def arch_images(request):
         'title' : 'Byres Road',
         'description' : 'A dreech Byers Rd in Glasgows West End'
         },
-    
         {
-        'imgName': '_large_glasgow-cafe-wander.jpg',
-        'title' : 'Cafe Wander',
-        'description': 'Occasionally you might have found some of these pictures in this cafe at one time'
+        'imgName': '_large_Washington-Arch.jpg',
+        'title' : 'Washington Arch',
+        'description' : 'Landmark in New York City'
         },
-
+    
         {
         'imgName': '_large_Hidden-In-Plain-Sight-Colour.jpg',
         'title' : 'Hidden in Plain Sight',
@@ -182,9 +222,9 @@ def arch_images(request):
         },
         
         {
-            'imgName': '_large_Washington-Arch.jpg',
-            'title' : 'Washington Arch',
-            'description' : 'Landmark in New York City'
+        'imgName': '_large_glasgow-cafe-wander.jpg',
+        'title' : 'Cafe Wander',
+        'description': 'Occasionally you might have found some of these pictures in this cafe at one time'
         },
     ]
     # Note finder is from staticfiles and depends on the staticfiles data
@@ -193,17 +233,24 @@ def arch_images(request):
         images_folder_path = finders.find('hotdog_app/images/pictures/architecture')
     except:
         images_folder_path = None
+        
     if images_folder_path and os.path.exists(images_folder_path):
         good = install_images(arch_images_data, images_folder_path)
         message = 'Pictures Installed' if good else 'Error installing pictures'
 
-        return render(request,'hotdog_app/db_admin.html', {'message':message})
 
 
+    cache.clear()  # Ensure new data is loaded.
+    return render(request,'hotdog_app/db_admin.html', {'message':message})
+
+
+@login_required
 def delete_all(request):
     Artworks.objects.all().delete()
-    return render(request,'hotdog_app/db_admin.html', {'message':'All Pictures Deleted'})
-     
+    cache.clear()
+    return render(request,'hotdog_app/db_admin.html', {'message':'All Pictures Deleted'}) 
+
+@login_required    
 def inactive(request):
     return render(request, 'network/db_admin.html', {'message':'Button Inactive'})
 

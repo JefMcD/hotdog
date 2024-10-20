@@ -13,6 +13,7 @@ class User(AbstractUser):
     def __str__(self):
         return f"{self.pk}, {self.username}, {self.email}"
     
+    
 class Artworks(models.Model):
     media_url = settings.MEDIA_URL # /hotdog_app_media/
     flipper_images = 'flipper_images' # flipper_images/
