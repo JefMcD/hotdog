@@ -8,7 +8,10 @@ import stat
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 
-
+#
+#   flipper_images - array of objects containing details of the images to be inserted into the database (The Upload details)
+#   images-folder - the path to where the source images are stored on the filesystem (The Upload images)
+#
 def install_images(flipper_images, images_folder):
     print(f"################ install images ################")
     installed_success = True
@@ -43,11 +46,13 @@ def install_images(flipper_images, images_folder):
                 # Save the image to the Artworks model
                 new_pic.picture.save(pic['imgName'], new_image_file)
                 
-                # pic being saved on pythonanywhere hotdog_app_media/flipper_images
+                # Set Permissions on uploaded Media
+                # pic being saved on pythonanywhere hotdog_app_media/...
                 # pic save 'locked' --w----r-T making it unreadable to the app
-                # Set file permissions to be more accessible (e.g., 644)
-                image_path = os.path.join(settings.MEDIA_ROOT, 'flipper_images', pic['imgName']) # MEDIA image
-                os.chmod(image_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)  # 644 permissions
+                # Set file permissions to be more accessible (e.g., 664)
+                # image_path = os.path.join(settings.MEDIA_ROOT, 'flipper_images', pic['imgName']) # MEDIA image stored in /hotdog_app_media/flipper_images/imageName.jpg
+                image_path = os.path.join(settings.MEDIA_ROOT, pic['imgName']) # MEDIA image stored in /hotdog_app_media/imageName.jpg
+                os.chmod(image_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH)  # 644 permissions
                 order_number += 1
         else:
             print(f"image_path does not exist: {image_path}")

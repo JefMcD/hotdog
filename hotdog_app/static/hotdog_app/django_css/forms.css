@@ -1,0 +1,591 @@
+
+/* 
+/////////////////////////////////////////////////////////////////
+/// 
+/// Contact Form
+/// 
+///////////////////////////////////////////////////////////////// 
+*/
+
+.authenticate-main-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40rem;
+    height: 100%;
+    background-color: #fff9e9;
+    border: 5px solid #c70d00;
+    border-radius: 1rem;
+    padding-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .authenticate-logo-wrapper{
+    position: relative;
+    display: block;
+    width: 10rem;
+    margin-top: 3rem;
+
+    /* border: 2px solid rgb(34, 0, 0);
+    background-color: purple; */
+}
+
+.authenticate-logo-wrapper img{
+    width: 100%;
+}
+
+.site-enerjon{
+    color: var(--dk-003);
+    font-family: var(--general_text);
+    margin: 1rem;
+}
+
+.site-enerjon .hotdog_app-title{
+    font-size: 30pt;
+}
+.site-enerjon .tagline{
+    font-family: var(--logo);
+    font-size: 16pt;
+    text-align: center;
+
+    /* //border: 2px solid black; */
+}
+
+/* 
+////////////////////////// Login Page //////////////////////// 
+*/
+
+.login-page-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: right;
+    width: 25rem;
+    padding: 1rem;
+    /* //border: 5px solid black;
+    //background-color: rgb(0, 158, 53); */
+}
+
+
+.login-title{
+    position: relative;
+    display: block;
+
+    color: var(--dk-003);
+    font-size: 24pt;
+    font-family: var(--logo);
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+/* 
+    //border: 2px solid var(--dk-001);
+    //background-color: purple; 
+*/
+
+}
+
+.login-message{
+    color: var(--dk-001);
+    font-size: 14pt;
+    font-family: var(--general_text);
+
+}
+
+.login-btn{
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-top: 2rem;
+
+    width:7rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    padding:0.5rem;
+
+    border-radius: 1rem;
+    border: 2px solid var(--dk-001);
+
+    color: var(--dk-004);
+    background-color: var(--lt-001);
+
+
+    transition-property: background-color, color;
+    transition-duration: 350ms;
+    transition-timing-function: cubic-bezier();
+}
+.login-btn:hover,
+.login-btn:focus,
+.login-btn:target{
+    background-color: var(--white-001);
+    color: var(--red-002);
+}
+
+.authenticate-btn{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.authenticate-redirect{
+    position: relative;
+    display:block;
+    text-align: center;
+    padding: 1rem;
+    color: var(--dk-003);
+    font-size: 16pt;
+    font-family: var(--font-stack1);
+
+}
+
+
+
+
+
+
+.std-form-wrapper{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 16rem;
+    padding: 1rem;
+
+    margin: auto;
+
+    color: var(--black-001);
+    /* border: 2px solid var(--dk-002;
+    background-color: var(--white-001; */
+
+}
+
+.login-form-wrapper{
+    position: relative;
+    display: block;
+    height: 18rem;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--black-001);
+    /* border: 2px solid var(--dk-002;
+    background-color: yellow; */
+
+}
+
+
+.login-form{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 14rem;
+    margin: 0;
+    padding: 0;
+
+    color: var(--black-001);
+    /* //border: 2px solid var(--dk-002;
+    //background-color: blue; */
+}
+.authentication-form-input{
+    display: inline-block;
+    width: 100%;
+    height: 3rem;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+
+    color: var(--white-001);
+    border: 2px solid var(--lt-002);
+    background-color: var(--dk-003);
+}
+
+.register-form-wrapper{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 23rem;
+
+    margin: 0;
+    padding: 0;
+
+    color: var(--black-001);
+    /* //border: 2px solid var(--dk-002;
+    //background-color: yellow; */
+
+}
+
+.register-form{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+    padding: 0;
+
+    color: var(--black-001);
+    /* //border: 2px solid var(--dk-002;
+    //background-color: blue; */
+}
+
+
+
+/*
+//////////////// Contact Form ///////////////////
+*/
+
+/*
+///////////////// Modals /////////////////////
+*/
+
+  .contact-form-container{
+    position:absolute;
+    display: block;
+    top: 3vh;
+    left: 1vw;
+  
+    width: 80%;
+    aspect-ratio: 1/1;
+  
+    z-index: 2;
+  
+    background-color: var(--lt-002);
+    border: 2px solid var(--red-003);
+    border-radius: 2vw;
+  }
+  
+  .top-border{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 4vh;
+    justify-content: flex-end;
+  
+    padding: 0.5vw;
+  
+    background-color: var(--dk-003);
+    outline: 2px solid var(--dk-002);
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+  
+  }
+.contact-form-wrapper{
+    position: relative;
+    display: block;
+    width: 90%;
+    max-width: 60rem;
+    height: 90%;
+    padding: 1vw;
+
+    margin: auto;
+
+    color: var(--black-001);
+    border: 2px solid var(--red-002);
+    background-color: var(--dk-001);
+}
+
+
+
+
+
+.about-form{
+    position:absolute;
+    display: block;
+    top: 3vh;
+    left: 1vw;
+  
+    width: 90vw;
+    aspect-ratio: 1/1;
+  
+    z-index: 2;
+  
+    background-color: var(--lt-002);
+    border: 2px solid var(--red-003);
+    border-radius: 2vw;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+/////////////////////////////////////////////////
+/// 
+/// General Form
+///
+//////////////////////////////////////////////////  
+*/
+.form-block{
+    position: absolute;
+    display: none;
+    
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    max-width: 30rem;
+    height: 15rem;
+    margin: auto;
+    
+    /* //border: 2px solid red;
+    //background-color: var(--red-001; */
+    z-index: 1;
+}
+
+
+    
+.form-block-internal-container{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 15rem;
+    
+    padding: 1rem;
+    
+    /* //border: 2px solid black;
+    //background-color: var(--white-001;
+     */
+    z-index: 1;
+    
+}
+    
+.form-wrapper{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 13rem;
+    padding: 1rem;
+    padding-top: 1.5rem;
+
+    border: 2px solid black;
+    border-radius: 1.5rem;
+    background-color: var(--dk-001);
+    
+}
+    
+
+
+
+
+
+
+
+
+    
+.general-form{
+    position: relative;
+    display: block;
+
+    width: 100%;
+    height: 13rem;
+    padding: 1rem;
+    /* //border: 2px solid var(--dk-004;
+    //border-radius: 0.5rem;;
+    //background-color:var(--red-001; */
+
+}
+.general-form .general-form-header{
+    color: var(white-001);
+    font-size: 16pt;
+    margin-bottom: 0.5rem;
+
+    /* //border-radius: 0.5rem;;
+    //background-color:purple; */
+}
+
+
+.general-form label{
+    display: inline-block;
+    width: 4.5rem;
+    height: 3rem;
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: 12pt;
+    text-align: left;
+    color: var(--dk-004);
+    /* //border: 2px solid black; */
+    margin: 0;
+}
+
+.general-form input{
+    display: inline-block;
+}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ //////////////////////////////////////////////////////////////////
+/// 
+/// General Form Button Style
+/// 
+////////////////////////////////////////////////////////////////// */
+
+.form-btn{
+    display: inline-block;
+
+    text-align: center;;
+    width: 5rem;
+    height:2rem;
+    margin-right: 0.5rem;
+    padding-bottom: 0.3rem;
+    font-size: 14pt;
+
+    border: 2px solid var(--dk-004);
+    border-radius: 0.5rem;
+
+    color: var(--dk-004);
+    background-color: var(--lt-002);
+
+    cursor: pointer;
+
+    transition-timing-function: cubic-bezier();
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+}
+
+.form-btn:hover,
+.form-btn:target,
+.form-btn:focus{
+    color: var(--red-002);
+    background-color: var(--white-001);
+}
+
+.form-btn.disable{
+    color:var(--lt-003);
+    background-color:var(--dk-001);
+
+    cursor:auto;
+}
+
+
+
+
+
+
+
+/*
+ //////////////////////////////////////
+/// 
+/// General form INPUT styles
+/// 
+/////////////////////////////////////// */
+
+.general-form-input{
+    display: inline-block;
+    width: calc(100% - 5.5rem);
+    height: 3rem;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+
+    border: 2px solid var(--dk-002);
+    border-radius: 0.5rem;
+}
+
+
+
+
+
+
+
+
+/* 
+///////////////////////////////////////////////////////////
+/// 
+/// General Form Submit Button Styles
+/// 
+/////////////////////////////////////////////////////////// */
+
+.submit-btn-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+
+    width: 100%;
+    margin-top: 0.5rem;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

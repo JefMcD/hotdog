@@ -13,7 +13,8 @@ urlpatterns = [
     path("get_first_pic", views.get_first_pic, name = "get_first_pic"),
     path("get_next_pic/<int:image_order_num>", views.get_next_pic, name = "get_next_pic"),   
     path("get_prev_pic/<int:image_order_num>", views.get_prev_pic, name = "get_prev_pic"), 
- 
+    path("ping", views.ping, name="ping"),
+    path("contact_form", views.contact_form, name="contact_form"),
     # re_path(r'^.*$', views.index, name='index'),  # Catch-all URL for React routes
 
     # db_admin paths

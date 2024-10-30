@@ -13,13 +13,31 @@ class User(AbstractUser):
     def __str__(self):
         return f"{self.pk}, {self.username}, {self.email}"
     
+class Messages(models.Model):
+    id      = models.AutoField(primary_key=True, db_index=True)
+    sender  = models.CharField(null=False, blank=False, max_length=50)
+    email   = models.EmailField(null=False, blank=False, max_length=254)
+    subject = models.CharField(null=False, blank=False, max_length=50)
+    msg_body= models.TextField(null=False, blank=False, max_length=1024)
     
+    def serialize(self):
+        return{
+            'id'        : self.id,
+            'sender'    : self.sender,
+            'email'     : self.email,
+            'subject'   : self.subject,
+            'msg_body'  : self.msg_body,
+        }
+    def __str__(self):
+        return f"id: {self.id}, Sender: {self.sender}, Subject: {self.subject}, Email: {self.email}, Body: {self.msg_body}"   
+    
+     
 class Artworks(models.Model):
     media_url = settings.MEDIA_URL # /hotdog_app_media/
-    flipper_images = 'flipper_images' # flipper_images/
+    # flipper_images = 'flipper_images' # flipper_images/
     
     id          = models.AutoField(primary_key=True, db_index=True)
-    picture     = models.ImageField(null=True, blank=True, upload_to = flipper_images)
+    picture     = models.ImageField(null=True, blank=True, ) # upload_to = flipper_images defailts to MEDIA_ROOT
     title       = models.CharField(null=False, blank=False, max_length=50)
     description = models.CharField(null=False, blank=False, max_length=512)
     order       = models.PositiveIntegerField(default=0, unique=True, db_index=True)

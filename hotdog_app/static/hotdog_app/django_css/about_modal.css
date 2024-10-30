@@ -1,0 +1,33 @@
+
+
+.about-component{
+    position:absolute;
+    display: block;
+    top: 3vh;
+    left: 1vw;
+  
+    width: 90vw;
+    aspect-ratio: 1/1;
+  
+    z-index: 2;
+  
+    background-color: var(--lt-002);
+    border: 2px solid var(--red-003);
+    border-radius: 2vw;
+  }
+
+  .about-top-border{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 4vh;
+    justify-content: flex-end;
+  
+    padding: 0.5vw;
+  
+    background-color: var(--dk-003);
+    outline: 2px solid var(--dk-002);
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+  
+  }

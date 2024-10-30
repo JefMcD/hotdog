@@ -1,5 +1,57 @@
 
+#close-btn-svg{
+    width: 4vw;
+    height: 4vw;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
 
+#close-btn-rect{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+}
+
+#close-btn-path3{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753; 
+}
+#close-btn-path4{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+}
+
+#about-svg{
+    width: 4vw;
+    height: 4vw;
+    margin-right: 1vw;
+}
+#about-path{
+    fill:#800000;
+}
+
+#contact-svg{
+    width: 4vw;
+    height: 4vw;
+}
+
+#contact-path{
+    fill:#800000;
+}
 
 
 #prev-button-path{

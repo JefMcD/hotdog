@@ -16,6 +16,17 @@
   border-radius: 3vw;
 
 }
+
+.nav-icons-container{
+  position: absolute;
+  display:flex;
+  width: 100%;
+  justify-content: flex-start;
+
+  z-index: 1;
+
+  /* border: 2px solid black;  */
+}
 .pic-title{
   position: relative;
   display: flex;
@@ -133,7 +144,7 @@
   position: relative;
   display: block;
 
-  width: 2vw;
+  width: 3vw;
 
   /* border: 2px solid var(--dk-001); */
 }
@@ -144,6 +155,8 @@
   width: 100%;
 
 }
+
+
 
 
 

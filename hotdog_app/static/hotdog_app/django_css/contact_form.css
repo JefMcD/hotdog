@@ -1,0 +1,135 @@
+
+
+/*
+//////////////// Contact Form ///////////////////
+*/
+
+
+.contact-form-component{
+    position:absolute;
+    display: block;
+    top: 3vh;
+    left: 2vw;
+  
+    width: 80%;
+    aspect-ratio: 1/1;
+  
+    z-index: 2;
+  
+    background-color: var(--lt-002);
+    border: 2px solid var(--red-003);
+    border-radius: 2vw;
+  }
+  
+  .contact-top-border{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 4vh;
+    justify-content: flex-end;
+  
+    padding: 0.5vw;
+  
+    background-color: var(--lt-001);
+    outline: 2px solid var(--dk-002);
+    border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw;
+  
+  }
+.contact-form-title{
+    position: relative;
+    display: flex;
+    padding: 1vh;
+    justify-content: center;
+    color: inherit;
+    font-family: inherit;
+    font-size: 4vh;
+    
+}
+.contact-form-wrapper{
+    position: relative;
+    display: block;
+    height: 80%;
+    width: 90%;
+    max-width: 60rem;
+
+    margin: auto;
+    margin-top: 0.5vh;
+
+    /* border: 2px solid var(--red-002);
+    background-color: var(--lt-004); */
+}
+
+
+.contact-form{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* border: 2px solid var(--dk-002);
+    background-color: blue; */
+
+    overflow: auto;
+}
+
+.contact-form-input{
+    display: inline-block;
+    width: 100%;
+    height: 4vh;
+    padding: 1vh;
+    margin: 0.5vh 0;
+
+    font: inherit;
+    font-size: 3vh;
+
+    color: var(--dk-001);
+    outline: 1px solid var(--red-004);
+    border: 2px solid var(--red-004);
+    border-radius: 1vh;
+    background-color: var(--lt-001);
+}
+.contact-form-message{
+    outline: none;
+    height: 12vh;
+    overflow: auto;
+}
+
+.submit-btn{
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-top: 2vh;
+
+    width:10vw;
+    height: 5vh;
+    margin-bottom: 1vh;
+    padding:1vw;
+
+    border-radius: 2vh;
+    border: 2px solid var(--dk-001);
+
+    font:inherit;
+    font-size: 2.3vh;
+
+    color: var(--red-004);
+    background-color: var(--lt-001);
+
+
+    transition-property: background-color, color;
+    transition-duration: 350ms;
+    transition-timing-function: cubic-bezier();
+}
+.submit-btn:hover,
+.submit-btn:focus,
+.submit-btn:target{
+    background-color: var(--white-001);
+    color: var(--red-002);
+}
+
+.contact-form-error{
+    color: var(--red-003);
+    font-size: 3vh;
+    font-family: inherit;
+
+}

@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from corsheaders.defaults import default_headers
 from pathlib import Path
 import os
 from decouple import config
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,19 +32,24 @@ MEDIA_URL = '/hotdog_app_media/'
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'jeffers.pythonanywhere.com',
     'localhost:5173/',
+    '127.0.0.1:5173',
     '127.0.0.1',
+    'localhost',
+    '127.0.0.1:8000',
+    'localhost:8000',
+    '127.0.0.1:8001',
+    'localhost:8001'
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver_nostatic', 
     'hotdog_app',
     'corsheaders',
     'django.contrib.admin',
@@ -50,13 +57,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic', # Whitenoise serves static in Dev and Prod
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Enable Whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -171,37 +179,119 @@ STATICFILES_DIR = [
 # must be called 'staticfiles' for whitenoise to work
 STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles') 
 
-#File storage engine used by collectstatic. 
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# (Django pre 4.2) File storage engine used by collectstatic. 
+# Both of these work
+# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # Standard Django
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # Standard Django
+
+# Running collectstatic causes errors (Django 4.2.5)
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # Adds Compression & Caching
+
+# (Django 4.2+) File storage engine used by collectstatic. 
+# WhiteNoise comes with a storage backend which compresses your files and hashes them to 
+# unique names, so they can safely be cached forever. 
+# To use it, set it as your staticfiles storage backend in your settings file.
+# DOESNT WORK on Django 4.2.5
+# STORAGES = {
+#     # ...
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", # Compression & Caching
+#         # "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", # No Caching
+#     },
+# }
 
 
-INTERNAL_IPS = [
-   '127.0.0.1',  # example IP, add your own IPs here
-   # ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# CORS https://www.stackhawk.com/blog/django-cors-guide/
+
+# determines whether the server allows cookies in the cross-site HTTP requests
+# Allow React frontend to make cross-origin requests
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'X-CSRFToken',
 ]
-
 
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # React Client Netlify/Vercel domain Note No trailing slash 'http://localhost:5173/'
+    'http://127.0.0.1:5173',
+    'http://jeffers.pythonanywhere.com', # Live Server
 ]
 
 # Optionally, to allow all origins:
+# The CORS_ALLOW_ALL_ORIGINS setting accepts only true or false. 
+# If true, the server will accept all requests. 
+# However, for security purposes, it’s better to use one of the above settings to limit valid request sources
+#
 CORS_ALLOW_ALL_ORIGINS = True
 
+# CORS_ALLOWED_ORIGIN_REGEXES are regular expressions that match domains that can make requests. 
+# This setting is especially useful if you have many domains
+# 
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+# r"^https://\w+\.domain\.com$",
+# ]
 
 
 
 
-CSRF_COOKIE_SECURE = True 
+
+
+
+
+
+
+
+
+
+# CSRF_COOKIE_SECURE = False # Development
+CSRF_COOKIE_SECURE = True  # Production
+
+# Make sure Django allows the CSRF token to be sent via cookies. Needed for React Frontend
+#CSRF_COOKIE_HTTPONLY = False
+
+# This allows the cookie to be sent in cross-origin requests.
+#CSRF_COOKIE_SAMESITE = 'None'
 
 # Add the CSRF domains here
 CSRF_TRUSTED_ORIGINS = [ 
     'http://jeffers.pythonanywhere.com',
-    'http://localhost:5173/', # seperate local server used for React Client eg Vercel/Netlify
+    'http://localhost:5173', # seperate local server used for React Client eg Vercel/Netlify
+    'http://127.0.0.1:5173',
     'http://127.0.0.1',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:8001',
 ] 
 
-FILE_UPLOAD_PERMISSIONS = 644
-FILE_UPLOAD_DIRECTORY_PERMISSIONS = 730
+FILE_UPLOAD_PERMISSIONS = 664
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 775
 SESSION_COOKIE_SECURE =True
+
+
+
+# Email Sendmail config
+EMAIL_BACKEND = config('EMAIL_BACKEND') 
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool) 
+EMAIL_HOST = config('EMAIL_HOST') 
+EMAIL_PORT = config('EMAIL_PORT', cast=int) 
+EMAIL_HOST_USER = config('EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD') 
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL') 

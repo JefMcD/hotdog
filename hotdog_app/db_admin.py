@@ -140,7 +140,7 @@ def music_images(request):
 
     
         {
-        'imgName': '_large_Blondie-Telephone.jpg',
+        'imgName': 'large_Blondie-Telephone.jpg',
         'title' : 'Blondie Telephone',
         'description' : 'Debbie Harry hangin on the telephephone'
         },
@@ -175,7 +175,7 @@ def music_images(request):
         'description' : 'Queens Freedie Mercury'
         },
     ]
-    # Note finder is from staticfiles and depends on the staticfiles data
+    # Note finders is from staticfiles and depends on the staticfiles data
     # ie run ./manage.py collectstatic for this to work
     try:
         images_folder_path = finders.find('hotdog_app/images/pictures/music')
