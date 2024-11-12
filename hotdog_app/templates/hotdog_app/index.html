@@ -2,6 +2,11 @@
 {% extends "hotdog_app/main_layout.html" %}
 {% load static %}
 
+{% block linkicons %}
+    <link rel="shortcut icon" href="#">
+    <link rel="icon" type="image/svg+xml" href="{% static 'hotdog_app/react_frontend/vite.svg' %}?v0.001" />
+{% endblock %}
+
 {% block title %}
     Hotdog Art Gallery
 {% endblock %}
