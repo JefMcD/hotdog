@@ -13,21 +13,24 @@
   
     background-color: var(--lt-002);
     border: 2px solid var(--red-003);
+    border-top: 5vh solid var(--red-004);
     border-radius: 2vw;
   }
 
-  .about-top-border{
+  .about-close-btn{
     position: relative;
-    display: flex;
-    width: 100%;
+    display: absolute;
+    width: 4vh;
     height: 4vh;
-    justify-content: flex-end;
   
-    padding: 0.5vw;
-  
-    background-color: var(--dk-003);
-    outline: 2px solid var(--dk-002);
-    border-top-left-radius: 2vw;
-    border-top-right-radius: 2vw;
+    top: -4vh;
+    left: calc(100% - 4vh);
+
+
+    border: 2pv solid white;
+    /* background-color: var(--dk-003);
+    outline: 2px solid var(--dk-002); */
+    /* border-top-left-radius: 2vw;
+    border-top-right-radius: 2vw; */
   
   }

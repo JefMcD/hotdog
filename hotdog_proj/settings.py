@@ -14,7 +14,14 @@ from pathlib import Path
 import os
 from decouple import config
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('SECRET_KEY')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,15 +31,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # MEDIA_ROOT = os.path.join(BASE_DIR,'static/network/users')
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'hotdog_app_media')
 MEDIA_URL = '/hotdog_app_media/'
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
 ALLOWED_HOSTS = [
     'jeffers.pythonanywhere.com',
@@ -57,14 +55,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic', # Whitenoise serves static in Dev and Prod
+    #'whitenoise.runserver_nostatic', # Whitenoise serves static in Dev and Prod
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # Enable Whitenoise
+    #'whitenoise.middleware.WhiteNoiseMiddleware', # Enable Whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -174,18 +172,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIR = [
      os.path.join(BASE_DIR, 'hotdog_app/static/react_frontend'), 
-] #Additional paths to be handled by static data
+] # Additional paths to be handled by static data
 
 # must be called 'staticfiles' for whitenoise to work
 STATIC_ROOT =  os.path.join(BASE_DIR, 'staticfiles') 
-
+# WHITENOISE_ROOT = STATIC_ROOT
 # (Django pre 4.2) File storage engine used by collectstatic. 
 # Both of these work
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # Standard Django
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # Standard Django
 
 # Running collectstatic causes errors (Django 4.2.5)
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage" # Adds Compression & Caching
+# STATICFILES_STORAGE = "whitenoise.storage.ManifestStaticFilesStorage" 
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # (Django 4.2+) File storage engine used by collectstatic. 
 # WhiteNoise comes with a storage backend which compresses your files and hashes them to 
@@ -196,7 +195,7 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage' # 
 #     # ...
 #     "staticfiles": {
 #         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", # Compression & Caching
-#         # "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", # No Caching
+#       # "BACKEND": "whitenoise.storage.ManifestStaticFilesStorage", # No Caching
 #     },
 # }
 

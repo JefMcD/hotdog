@@ -36,6 +36,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.middleware.csrf import get_token
 # from .forms import *
 
+# email
+from django.core.mail import send_mail
+
 # Image Handling
 from PIL import Image, ImageColor
 from io import BytesIO
@@ -85,13 +88,22 @@ def contact_form(request):
             new_contact_message.save()
             confirm = new_contact_message.serialize()
             print(f"Message stored in database {confirm}")
+            message_ok = send_message(new_contact_message.id)
+            # display confirm
+            if message_ok :
+                # display success
+                print (f"message sent")
+            else:
+                # display fail
+                print(f"message failed")
+                
         except DatabaseError as error:
             return JsonResponse({'message': error}, status=500)
         except Exception as error:
             return JsonResponse({'message': error}, status=501)
 
         
-        return JsonResponse({'message': confirm}, status = 201)
+        return JsonResponse({'message': "Message sent. I'll be in touch soon!"}, status = 201)
     else:
         return JsonResponse({'message':'POST required'}, status = 301)
     
@@ -175,3 +187,32 @@ def get_prev_pic(request, image_order_num):
     else:
         return JsonResponse(("error: Request expects GET method"), status = 301)
 
+
+
+@csrf_exempt
+def send_message(message_id):
+    print(f"#### send_message ###")
+    message_exists = Messages.objects.filter(id = message_id).exists()
+    if (message_exists):
+        try:
+            print(f"getting message instance")
+            message = Messages.objects.get(id = message_id)
+            sender_name = message.sender
+            sender_email = message.email
+            message_body = message.msg_body
+            print(f"setting up email message")
+            recipients = ["artilleryvoo@protonmail.com"]
+            subject = "Message from Hotdog Gallery"
+            email_composition = f"From: {sender_name}\nEmail: {sender_email}\n\nNessage: \n{message_body}"
+            print(f"Sending mail with send_mail")
+            send_mail(subject, email_composition, sender_email, recipients)
+            return(True)
+        except DatabaseError as e:
+            print(f"Error sending message {e}")
+    else:
+        print(f"Email Message Not Found")
+    return(False)
+    
+    
+    
+    
