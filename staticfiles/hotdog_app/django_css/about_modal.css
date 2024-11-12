@@ -4,33 +4,84 @@
     position:absolute;
     display: block;
     top: 3vh;
-    left: 1vw;
-  
-    width: 90vw;
+    left: 2vw;
+
+    width: 80%;
     aspect-ratio: 1/1;
-  
+
     z-index: 2;
-  
-    background-color: var(--lt-002);
+
+    background-color: var(--lt-003);
     border: 2px solid var(--red-003);
     border-top: 5vh solid var(--red-004);
     border-radius: 2vw;
   }
 
   .about-close-btn{
-    position: relative;
-    display: absolute;
+    position: absolute;
+    display: block;
     width: 4vh;
     height: 4vh;
   
     top: -4vh;
     left: calc(100% - 4vh);
 
-
-    border: 2pv solid white;
-    /* background-color: var(--dk-003);
-    outline: 2px solid var(--dk-002); */
-    /* border-top-left-radius: 2vw;
-    border-top-right-radius: 2vw; */
+    /* border: 2px solid green; */
   
+  }
+
+  .about-title{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    object-fit: contain;
+/* 
+    border: 2px solid black; */
+  }
+
+  .para-tldr{
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 2.7vh;
+
+    color: var(--red-004);
+    padding: 0 5vh;
+
+    /* border: 2px solid grey; */
+
+
+  }
+
+  .para-body{
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 2.5vh;
+
+    color: var(--black-001);
+    padding: 0 2vh;
+
+    /* border: 2px solid pink; */
+
+  }
+  .about-pic-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2vh;
+  }
+  .about-pic{
+    position: relative;
+    display: block;
+    width: 50%;
+    overflow: hidden;
+    border: 2px solid var(--red-004);
+    border-radius: 2vh;;
+  }
+  .about-pic img{
+    max-width: 100%;
+
+    object-fit: cover;
+
   }

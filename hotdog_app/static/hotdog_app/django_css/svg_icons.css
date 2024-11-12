@@ -152,6 +152,10 @@
     animation:  pulse 1000ms infinite ease-in-out;
 }
 
+#jeffers-path1{
+    fill:var(--red-004);
+}
+
 
 @keyframes pulse{
     0%{
