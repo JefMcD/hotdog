@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block linkicons %}
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" type="image/svg+xml" href="{% static 'hotdog_app/react_frontend/jeffers.svg' %}?v0.001" />
     <link rel="icon" type="image/svg+xml" href="{% static 'hotdog_app/react_frontend/vite.svg' %}?v0.001" />
 {% endblock %}
 
@@ -36,7 +36,7 @@
 
 
 {% block script %}
-    <script src="{% static 'hotdog_app/react_frontend/build/client_prd_server.js' %}"></script>
+    <script src="{% static 'hotdog_app/react_frontend/build/client_pythonanywhere.js' %}"></script>
 
     <!-- Import GSAP Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
