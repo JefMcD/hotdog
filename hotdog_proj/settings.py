@@ -55,14 +55,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    #'whitenoise.runserver_nostatic', # Whitenoise serves static in Dev and Prod
+    'whitenoise.runserver_nostatic', # Whitenoise serves static in Dev and Prod
     'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleware', # Enable Whitenoise
+    'whitenoise.middleware.WhiteNoiseMiddleware', # Enable Whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
