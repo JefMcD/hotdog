@@ -109,6 +109,82 @@
     width: 2vw;
     height: auto;
   }
+
+
+
+
+      /* Contact Form */
+      .contact-form-component{
+        top: 3vh;
+        left: 2vw;
+        width: 90%;
+        border-radius: 2vh;
+    }
+
+    .contact-close-btn{
+        width: 4vh;
+        height: 4vh;
+        top: 1vh;
+        left: calc(100% - 5vh);
+    }
+
+    .contact-form-title{
+        padding: 1vh;
+        font-size: 5vh;   
+    }
+    .contact-form-wrapper{
+        margin-top: 0.5vh;
+    }
+    .contact-form-input{
+        height: 3.5vh;
+        padding: 2vh 1vh;
+        margin: 0.5vh 0;
+        font-size: 3vh;
+        border-radius: 1vh;
+
+    }
+    .contact-form-message{
+        height: 30vh;
+        padding: 1vh;
+    }
+    .submit-btn{
+        margin-top: 0vh;
+        width:15vh;
+        height: 5vh;
+        padding:0 1vw;
+        border-radius: 2vh;
+        font-size: 3vh;
+    }
+
+
+    /* About Modal */
+    .about-component{
+      top: 2vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vw;
+    }
+
+    .about-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 0.5vh;
+      left: calc(100% - 3vw);
+    }
+    .about-title{
+      height: 6vh;
+    }
+    .para-tldr{
+      font-size: 3vh;
+      padding: 1vh 3vh;
+    }
+    .about-pic-container{
+      padding: 0.5vh;
+    }
+    .para-body{
+      font-size: 3vh;
+      padding: 1vh 1vh;
+    }
 }
 
 /* Small-Medium Devices Landscape (768px to 900px) */
@@ -137,6 +213,82 @@
     /* auto only works with width defined */
     width: 1.5vw;
     height: auto;
+  }
+
+
+    /* Contact Form */
+  .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 5vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 5vh;
+      padding: 1.2vh 1vh;
+      margin: 0.5vh 0;
+      font-size: 3vh;
+      border-radius: 1vh;
+
+  }
+  .contact-form-message{
+      height: 30vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 6vh;
+      padding:0 1vh;
+  
+      border-radius: 2vh;
+      font-size: 3vh;
+  }
+
+   /* About Modal */
+   .about-component{
+    top: 2vh;
+    left: 2vw;
+    width: 95%;
+    aspect-ratio: 1/1;
+    border-radius: 2vw;
+  }
+
+  .about-close-btn{
+    width: 4vh;
+    height: auto;
+    top: 0.5vh;
+    left: calc(100% - 3vw);
+  }
+  .about-title{
+    height: 7vh;
+  }
+  .para-tldr{
+    font-size: 3.5vh;
+    padding: 1vh 3vh;
+  }
+  .about-pic-container{
+    padding: 0.5vh;
+  }
+  .para-body{
+    font-size: 3vh;
+    padding: 1vh 2vh;
   }
 }
 
@@ -178,6 +330,52 @@
     width: 2vw;
     height: auto;
   }
+
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 6vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 6vh;
+      padding: 1.2vh 1vh;
+      margin: 1vh 0;
+      font-size: 4vh;
+      border-radius: 1vh;
+
+  }
+  .contact-form-message{
+      height: 30vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 6vh;
+      padding:0 1vh;
+  
+      border-radius: 2vh;
+      font-size: 4vh;
+  }
 }
 
 
@@ -215,6 +413,51 @@
     width: 2vw;
     height: auto;
   }
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 5vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 6vh;
+      padding: 1.2vh 1vh;
+      margin: 1vh 0;
+      font-size: 4vh;
+      border-radius: 1vh;
+
+  }
+  .contact-form-message{
+      height: 35vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 6vh;
+      padding:0 1vh;
+  
+      border-radius: 2vh;
+      font-size: 4vh;
+  }
 }
 
 /* Laptops and Desktops Landscape (1281px to 1440px) */
@@ -243,6 +486,51 @@
   .contactBtn-container{ /* svg-beermat.css */
     width: 5vw;
     height: 5vw;
+  }
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 6vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 6vh;
+      padding: 1.2vh 1vh;
+      margin: 1vh 0;
+      font-size: 4vh;
+      border-radius: 1vh;
+
+  }
+  .contact-form-message{
+      height: 35vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 6vh;
+      padding:0 1vh;
+  
+      border-radius: 2vh;
+      font-size: 4vh;
   }
 
 }

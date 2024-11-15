@@ -24,11 +24,89 @@ Standard Portrait Sizes */
     width: 25px;
     }
 
+    /* Left Right Arrows */
     .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
         /* auto only works with width defined */
         width: 4vw;
         height: auto;
     }
+
+
+    /* Contact Form */
+    .contact-form-component{
+        top: 3vh;
+        left: 2vw;
+        width: 90%;
+        border-radius: 2vh;
+    }
+
+    .contact-close-btn{
+        width: 3vh;
+        height: 3vh;
+        top: 1vh;
+        left: calc(100% - 4vh);
+    }
+
+    .contact-form-title{
+        padding: 1vh;
+        font-size: 3vh;   
+    }
+    .contact-form-wrapper{
+        margin-top: 0.2vh;
+    }
+    .contact-form-input{
+        height: 3vh;
+        padding: 1.2vh 1vh;
+        margin: 0.5vh 0;
+        font-size: 2vh;
+        border-radius: 1vh;
+
+    }
+    .contact-form-message{
+        height: 14vh;
+        padding: 1vh;
+    }
+    .submit-btn{
+        margin-top: 0vh;
+
+        width:10vh;
+        height: 4vh;
+        padding:1vw;
+    
+        border-radius: 1vh;
+        font-size: 2vh;
+    }
+
+
+    /* About Modal */
+    .about-component{
+        top: 1vh;
+        left: 1vw;
+        width: 98%;
+        border-radius: 3vw;
+      }
+
+      .about-close-btn{
+        width: 3vh;
+        height: 3vh;
+        top: 1vh;
+        left: calc(100% - 7vw);
+      }
+      .about-title{
+        height: 5vh;
+      }
+      .para-tldr{
+        font-size: 2.3vh;
+        padding: 0 1vh;
+      }
+      .about-pic-container{
+        padding: 0.5vh;
+      }
+      .para-body{
+        font-size: 2vh;
+        padding: 0 1vh;
+      }
+
 }
   
 /* Small devices (landscape phones and tablets, 481px and up) */
@@ -56,6 +134,36 @@ Standard Portrait Sizes */
         .contactBtn-container{ /* svg-beermat.css */
         width: 6vw;
     }
+
+   /* About Modal */
+   .about-component{
+    top: 2vh;
+    left: 2vw;
+    width: 90vw;
+    aspect-ratio: 1/1;
+    border-radius: 2vw;
+  }
+
+  .about-close-btn{
+    width: 4vh;
+    height: auto;
+    top: 0.5vh;
+    left: calc(100% - 6vw);
+  }
+  .about-title{
+    height: 7vh;
+  }
+  .para-tldr{
+    font-size: 3vh;
+    padding: 1vh 2vh;
+  }
+  .about-pic-container{
+    padding: 0.5vh;
+  }
+  .para-body{
+    font-size: 2.5vh;
+    padding: 1vh 2vh;
+  }
 }
   
 
@@ -88,6 +196,38 @@ Standard Portrait Sizes */
         width: 4vw;
         height: auto;
     }
+
+
+   /* About Modal */
+   .about-component{
+    top: 2vh;
+    left: 2vw;
+    width: 90vw;
+    aspect-ratio: 1/1;
+    border-radius: 2vw;
+  }
+
+  .about-close-btn{
+    width: 4vh;
+    height: auto;
+    top: 0.5vh;
+    left: calc(100% - 6vw);
+  }
+  .about-title{
+    height: 6vh;
+  }
+  .para-tldr{
+    font-size: 2.8vh;
+    padding: 0.5vh 2vh;
+  }
+  .about-pic-container{
+    padding: 0.5vh;
+  }
+  .para-body{
+    font-size: 2.5vh;
+    padding: 1vh 2vh;
+  }
+
 }
   
 

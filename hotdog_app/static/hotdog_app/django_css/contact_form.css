@@ -20,16 +20,17 @@
     border: 2px solid var(--red-003);
 
     border-radius: 2vw;
-  }
+}
   
-  .contact-close-btn{
-    position: relative;
-    display: absolute;
+.contact-close-btn{
+    position: absolute;
+    display: block;
     width: 1.8vw;
     height: 1.8vw;
   
     top: 1vh;
     left: calc(100% - 3vw);
+    z-index: 2;
 
     /* border: 2px solid red; */
   }
@@ -88,7 +89,7 @@
 }
 .contact-form-message{
     outline: none;
-    height: 12vh;
+    height: 15vh;
     overflow: auto;
 }
 
@@ -98,12 +99,12 @@
     text-align: right;
     margin-top: 2vh;
 
-    width:10vw;
+    width:12vw;
     height: 5vh;
     margin-bottom: 1vh;
     padding:1vw;
 
-    border-radius: 2vh;
+    border-radius: 1vh;
     border: 2px solid var(--dk-001);
 
     font:inherit;

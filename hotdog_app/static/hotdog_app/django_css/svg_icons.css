@@ -51,8 +51,11 @@ svg{
 
 /* Round Close Button */
 #closeRnd-btn-svg{
+    /* 
     width: 1.8vw;
-    height: 1.8vw;
+    height: 1.8vw; 
+    */
+    /* Undefined Width and Height causes the savg to inherit its viewport from its container and scale to fit ! */
     /* border: 2px solid cyan;  */
 }
 
