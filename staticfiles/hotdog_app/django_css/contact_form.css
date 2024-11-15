@@ -18,18 +18,20 @@
   
     background-color: var(--lt-002);
     border: 2px solid var(--red-003);
-    border-top: 5vh solid var(--red-004);
+
     border-radius: 2vw;
   }
   
   .contact-close-btn{
     position: relative;
     display: absolute;
-    width: 4vh;
-    height: 4vh;
+    width: 1.8vw;
+    height: 1.8vw;
   
-    top: -4vh;
-    left: calc(100% - 4vh);
+    top: 1vh;
+    left: calc(100% - 3vw);
+
+    /* border: 2px solid red; */
   }
 .contact-form-title{
     position: relative;

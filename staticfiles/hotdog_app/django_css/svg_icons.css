@@ -1,12 +1,19 @@
 
-#close-btn-svg{
+
+svg{
+    /* border: 2px solid red; */
+}
+ 
+
+/* Square Close Button */
+#closeSq-btn-svg{
     width: 4vw;
     height: 4vw;
     max-width: 1.5rem;
     max-height: 1.5rem;
 }
 
-#close-btn-rect{
+#closeSq-btn-rect{
     fill:#800000;
     stroke:#e9c6af;
     stroke-width:4;
@@ -16,7 +23,7 @@
     stroke-dashoffset:190.753;
 }
 
-#close-btn-path3{
+#closeSq-btn-path3{
     fill:#800000;
     stroke:#e9c6af;
     stroke-width:6;
@@ -25,7 +32,7 @@
     stroke-miterlimit:20.8;
     stroke-dashoffset:190.753; 
 }
-#close-btn-path4{
+#closeSq-btn-path4{
     fill:#800000;
     stroke:#e9c6af;
     stroke-width:6;
@@ -35,23 +42,92 @@
     stroke-dashoffset:190.753;
 }
 
+
+
+
+
+
+
+
+/* Round Close Button */
+#closeRnd-btn-svg{
+    width: 1.8vw;
+    height: 1.8vw;
+    /* border: 2px solid cyan;  */
+}
+
+#closeRnd-path1{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:1.07558;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+
+}
+
+#closeRnd-path9{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:1.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+}
+
+#closeRnd-path10{
+    fill:#800000;
+    stroke:#e9c6af;
+    stroke-width:1.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-miterlimit:20.8;
+    stroke-dashoffset:190.753;
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* About and Contact Icons */
 #about-svg{
-    width: 4vw;
-    height: 4vw;
-    margin-right: 1vw;
+    /* width: 2.5vw;height: 2.5vw; */
 }
 #about-path{
     fill:#800000;
 }
 
 #contact-svg{
-    width: 4vw;
-    height: 4vw;
+    /* default viewport of svg */
+    /* width: 3.3vw; height: 3.3vw; */
+    /* WIthout deining a width and height for the viewport, the svg inherits the viewport size from its container */
 }
-
 #contact-path{
     fill:#800000;
 }
+
+
+
+
+ 
+  
+/* left and right arrows */
+.nav-icon{
+    object-fit: cover;
+    width: 1.5vw;
+    height: auto;
+}
+  
 
 
 #prev-button-path{
@@ -91,6 +167,10 @@
 #next-button-path:hover{
   fill: var(--red-002)
 }
+
+
+
+
 
 
 

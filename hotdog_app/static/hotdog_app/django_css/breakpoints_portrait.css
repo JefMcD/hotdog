@@ -1,0 +1,145 @@
+
+
+
+/* 
+Standard Portrait Sizes */
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 480px) and (orientation: portrait){
+    /* Styles for phones */
+    .pic-title{
+        font-size: 3.5vh;
+    }
+    .pic-description {
+        padding: 0.3rem;
+        font-size: 3.5vw;
+    }
+
+    /* about button and contact button */
+    .aboutBtn-container{ /* svg-beermat.css */
+    width: 20px;
+    margin: 0 0.5vh;
+    }
+    .contactBtn-container{ /* svg-beermat.css */
+    width: 25px;
+    }
+
+    .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+        /* auto only works with width defined */
+        width: 4vw;
+        height: auto;
+    }
+}
+  
+/* Small devices (landscape phones and tablets, 481px and up) */
+@media (min-width: 481px) and (max-width: 767px) and (orientation: portrait){
+    /* Styles for landscape phones and small tablets */
+        /* Styles for phones */
+    .pic-title{
+        font-size: 6vw;
+    }
+    .pic-description {
+        padding: 0.3rem;
+        font-size: 4vw;
+    }
+
+    .btns-container{
+        /* floats above pic-title */
+        height: 6vh;
+        padding-top:0.5vh;
+      }
+    /* about button and contact button */
+    .aboutBtn-container{ /* svg-beermat.css */
+        width: 5vw;
+        margin: 0 0.5vh;
+    }
+        .contactBtn-container{ /* svg-beermat.css */
+        width: 6vw;
+    }
+}
+  
+
+
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+    /* Styles for tablets */
+    /* Styles for phones */
+    .pic-title{
+        font-size: 7vw;
+    }
+    .pic-description {
+        padding: 0.3.5rem;
+        font-size: 4vw;
+    }
+
+    /* about button and contact button */
+    .aboutBtn-container{ /* svg-beermat.css */
+        width: 5vw;
+        margin: 0 0.5vh;
+    }
+        .contactBtn-container{ /* svg-beermat.css */
+        width: 6vw;
+    }
+
+    .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+        /* auto only works with width defined */
+        width: 4vw;
+        height: auto;
+    }
+}
+  
+
+
+
+
+/* Large devices (laptops/desktops, 1025px wide and up)*/
+@media (min-width: 1025px) and (max-width: 1440px) and (orientation: portrait){
+    /* Styles for laptops and desktops */
+    .pic-title{
+        font-size: 1vw;
+    }
+    .pic-description {
+        padding: 0.2rem;
+        font-size: 1vw;
+    }
+}
+
+/* Standard Desktop devices (large desktops, 1441px wide and up) (LG 1920 x 1080p)  */
+@media (min-width: 1440px)  and (orientation: portrait){
+    /* Styles for large desktops */
+    .pic-title{
+        font-size: 2vw;
+        color: red;
+    }
+    .pic-description {
+        padding: 0.2rem;
+        font-size: 1vw;
+        color: red;
+    }
+}
+
+/* QHD Desktop Devives 2560px wide and up (Viewsonic 2560 x 1440) */
+@media (min-width: 2560px) and (orientation: portrait){
+    /* Styles for large desktops */
+    .pic-title{
+        font-size: 4vw;
+    }
+    .pic-description {
+        padding: 0.3rem;
+        font-size: 3vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+  
+  

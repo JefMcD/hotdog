@@ -1,0 +1,365 @@
+
+
+
+
+
+
+/* Lanscape Orientation */
+
+/* general Landscape over-ride rules */
+@media (orientation: landscape) {
+  .pic-description::-webkit-scrollbar{
+      width: 1.5vh; /* width of the vertical scroll */
+      height: 1.5vh; /* height of horizontal scroll */
+  }
+
+  .pic-description::-webkit-scrollbar-track{
+      background: var(--red-004);
+      border-radius: 100vh; /* rounded scrollbar ends */
+      margin-block: 0.5vw; /* small margin between scroll bar and element */
+  }
+
+  .pic-description::-webkit-scrollbar-thumb {
+      background: var(--lt-003);
+      border: 0.3vw solid var(--red-004);
+      border-radius: 100vh; /* rounded pill shap */
+  }
+
+  .pic-description::-webkit-scrollbar-thumb.hover {
+      background: hsl(120 100% 10% / 1);
+  }
+
+
+  /* Firefox Scrollbar */
+  @supports (-moz-appearance: none){
+      .pic-description{
+          /* Make the pill green and the track invisible (clashes with elements rounded edges) */
+          scrollbar-color: hsl(120 75% 50% / 1)  hsl(120 100% 20% / 1); 
+          scrollbar-width: auto;
+
+          border-radius: 0.8vh;
+      }
+  }
+
+
+
+  /* svgBeermat rules */
+  .beermat-container{
+      height: 96vh;
+      width: 96vh;
+      aspect-ratio: 1/1;
+      padding: 1vw;
+      border-radius: 3vw;
+  }
+  .pic-title{
+      font-size: 3vw;
+  }
+
+  .pic-description {
+      font-size: 2vw;
+  }
+
+  .fade-effect {
+      height: 4vh;       
+  }
+
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 2vw;
+    height: auto;
+  }
+
+}
+
+
+
+/* Extra small devices (phones, 320px and up) */
+@media (max-width: 480px) and (orientation: landscape) {
+  /* Styles for phones */
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 1vw;
+    height: auto;
+  }
+}
+
+
+/* Small Mobile Landscape (480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
+  /* Styles for small mobile devices in landscape */
+
+  .pic-title{ /* svg-beermat.css */
+    font-size: 3.5vw;
+  }
+  .pic-description { /* svg-beermat.css */
+      font-size: 2.5vw;
+  }
+      /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 25px;
+    height: 25px;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 25px;
+    height: 25px;
+  }
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 2vw;
+    height: auto;
+  }
+}
+
+/* Small-Medium Devices Landscape (768px to 900px) */
+@media (min-width: 768px) and (max-width: 900px) and (orientation: landscape) {
+  /* Styles for medium tablets in landscape */
+    /* Styles for laptops and desktops in landscape */
+  .pic-title{
+      font-size: 3.5vw;
+  }
+
+  .pic-description {
+      font-size: 2vw;
+  }
+
+  /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 25px;
+    height: 25px;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 30px;
+    height: 30px;
+  }
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 1.5vw;
+    height: auto;
+  }
+}
+
+/* Medium-Standard Devices Landscape (901px to 1024px) */
+@media (min-width: 901px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles for medium tablets in landscape */
+    /* Styles for laptops and desktops in landscape */
+  .btns-container{
+    /* floats above pic-title */
+    height: 8vh;
+    padding-top:1vh;
+  }
+  .pic-title{
+      font-size: 4vw;
+  }
+
+  .pic-description {
+      font-size: 2vw;
+  }
+
+  .btns-container{
+    /* floats above pic-title */
+    height: 8vh;
+    padding-top:2vh;
+  }
+  /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 3vw;
+    height: 3vw;
+  }
+
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 2vw;
+    height: auto;
+  }
+}
+
+
+
+
+/* Large Tablets / Small Laptops Landscape (1025px to 1280px) */
+@media (min-width: 1025px) and (max-width: 1280px) and (orientation: landscape) {
+  /* Styles for large tablets or small laptops in landscape */
+  .pic-title{
+      font-size: 3.5vw;
+  }
+
+  .pic-description {
+      font-size: 2vw;
+  }
+
+  .btns-container{
+    /* floats above pic-title */
+    height: 8vh;
+    padding-top:1vh;
+  }
+
+  /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 3vw;
+    height: 3vw;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 4vw;
+    height: 4vw;
+  }
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 2vw;
+    height: auto;
+  }
+}
+
+/* Laptops and Desktops Landscape (1281px to 1440px) */
+@media (min-width: 1281px) and (max-width: 1440px) and (orientation: landscape) {
+  /* Styles for laptops and desktops in landscape */
+  .pic-title{
+      font-size: 4vw;
+  }
+
+  .pic-description {
+      font-size: 2vw;
+  }
+
+  .btns-container{
+    /* floats above pic-title */
+    height: 8vh;
+    padding-top:1vh;
+  }
+
+  /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 4vw;
+    height: 4vw;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 5vw;
+    height: 5vw;
+  }
+
+}
+
+/* Laptops & Devices (1440px to 1919px) (sub LG 1920x1080p) Remember on a Desktop the browser window is a little smaller than the display size so the LG browser window fall in here is covered here */
+@media (min-width: 1440px) and (max-width: 1919px) and (orientation: landscape) {
+  /* Styles for large desktops in landscape */
+  .pic-title{/* svg-beermat.css */
+      font-size: 3.5vw;
+  }
+  .pic-description { /* svg-beermat.css */
+      font-size: 2vw;
+  }
+
+  /* close button on contact form */
+  .contact-close-btn{ /* contact-form.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    top: 1vh;
+    left: calc(100% - 3vw);
+
+    /* border: 2px solid red; */
+  }
+  #closeRnd-btn-svg{ /* svg_icons.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    /* border: 2px solid green; */
+  }
+
+    /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 2vw;
+    margin: 0 0.5vw;
+  }
+
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 2.5vw;
+    height: auto;
+  }
+
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 2vw;
+    height: auto;
+  }
+
+
+}
+
+/* Standard Desktop Devices (1920px to 2559px) (LG 1920x1080p) */
+@media (min-width: 1920px) and (max-width: 2559px) and (orientation: landscape) {
+  /* Styles for large desktops in landscape */
+  .pic-title{ /* svg-beermat.css */
+      font-size: 3.5vw;
+  }
+  .pic-description { /* svg-beermat.css */
+      font-size: 2vw;
+  }
+
+  /* close button on contact form */
+  .contact-close-btn{ /* contact-form.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    top: -3.5vh;
+    left: calc(100% - 3vw);
+
+    /* border: 2px solid red; */
+  }
+  #closeRnd-btn-svg{ /* svg_icons.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    /* border: 2px solid green; */
+  }
+
+      /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 2.5vw;
+    margin: 0 0.5vw;
+  }
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 3.3vw;
+  }
+
+
+}
+
+/* QHD Desktop Devices (2560px wide and above (Viewsonic 2560 x 1440) */
+@media (min-width: 2560px) and (orientation: landscape) {
+  /* Styles for large desktops in landscape */
+  .pic-title{ /* svg-beermat.css */
+      font-size: 3.5vw;
+  }
+  .pic-description { /* svg-beermat.css */
+      font-size: 2vw;
+  }
+
+  /* close button on contact form */
+  .contact-close-btn{ /* contact-form.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    top: -3.5vh;
+    left: calc(100% - 3vw);
+
+    /* border: 2px solid red; */
+  }
+  #closeRnd-btn-svg{ /* svg_icons.css */
+    width: 1.8vw;
+    height: 1.8vw;
+    /* border: 2px solid green; */
+  }
+
+  
+}
+
+
+
+
+
+
+  

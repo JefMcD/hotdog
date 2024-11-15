@@ -15,30 +15,14 @@
   border: 2px solid var(--lt-001);
   border-radius: 3vw;
 
+
+
+  
+
 }
 
-.nav-icons-container{
-  position: absolute;
-  display:flex;
-  width: 100%;
-  justify-content: flex-start;
 
-  z-index: 1;
 
-  /* border: 2px solid black;  */
-}
-.pic-title{
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 10%;
-  font-family: var(--title1);
-  font-size: 3vw;
-  color: var(--red-005);
-
-  /* border: 2px solid black; */
-}
 
 .main-pic-container{
   position: relative;
@@ -127,34 +111,73 @@
 
 
 
-
+/* arrow buttons left and right */
 .gallery-nav{
   position: absolute;
   display: flex;
   justify-content: space-between;
-
   top: 35%;
   left: 5%;
   width: 90%;
-
   /* border: 2px solid green; */
 }
-
 .nav-btn{
   position: relative;
   display: block;
-
-  width: 3vw;
-
-  /* border: 2px solid var(--dk-001); */
+  /* width: 8px;
+  height: 13px; */
+  width: 4vw;
+  height: auto;
+  /* border: 2px solid var(--dk-001);  */
 }
 
 
-.nav-icon{
-  object-fit: cover;
+
+.pic-title{
+  /* This is not inside btns-container */
+  position: relative;
+  display: flex;
+  justify-content: center;
+
   width: 100%;
+  height: 10%;
+  font-family: var(--title1);
+  font-size: 3vw;
+  color: var(--red-005);
 
+  /* border: 2px solid black;  */
 }
+
+.btns-container{
+  /* floats above pic-title */
+  position: absolute;
+  display:flex;
+  width: 96%;
+  height: 10vh;
+  justify-content: flex-start;
+  padding-top:1vh;
+  z-index: 1;
+  /* border: 2px solid pink;   */
+}
+
+/* about button and contact button */
+/* Scaling svg's https://css-tricks.com/scale-svg/ */
+.aboutBtn-container{
+  width: 5vw;
+  height: 5vw;
+  padding: 0;
+  margin: 0;
+  margin: 0 0.5vw;
+  /* border: 2px solid green; */
+}
+.contactBtn-container{
+  width: 5vw;
+  height: 5vw;
+  padding: 0;
+  margin: 0;
+  /* border: 2px solid cyan; */
+}
+
 
 
 
