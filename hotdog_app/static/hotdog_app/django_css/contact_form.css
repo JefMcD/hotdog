@@ -16,7 +16,7 @@
   
     z-index: 2;
   
-    background-color: var(--lt-002);
+    background-color: var(--lt-004);
     border: 2px solid var(--red-003);
 
     border-radius: 2vw;
@@ -42,7 +42,6 @@
     color: inherit;
     font-family: inherit;
     font-size: 4vh;
-    
 }
 .contact-form-wrapper{
     position: relative;

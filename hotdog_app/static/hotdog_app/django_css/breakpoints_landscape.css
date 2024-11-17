@@ -578,6 +578,56 @@
   }
 
 
+
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 5vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 4vh;
+      padding: 1vh 1vh;
+      margin: 1vh 0;
+      font-size: 3vh;
+      border-radius: 1.5vh;
+
+  }
+  .contact-form-message{
+      height: 40vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 5vh;
+      padding:0 1vh;
+  
+      border-radius: 1.5vh;
+      font-size: 3vh;
+  }
+
+
+
+
 }
 
 /* Standard Desktop Devices (1920px to 2559px) (LG 1920x1080p) */
@@ -607,12 +657,64 @@
 
       /* about button and contact button */
   .aboutBtn-container{ /* svg-beermat.css */
-    width: 2.5vw;
+    width: 2vw;
     margin: 0 0.5vw;
   }
   .contactBtn-container{ /* svg-beermat.css */
-    width: 3.3vw;
+    width: 3vw;
   }
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 5vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 4vh;
+      padding: 1vh 1vh;
+      margin: 1vh 0;
+      font-size: 3vh;
+      border-radius: 1.5vh;
+
+  }
+  .contact-form-message{
+      height: 35vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 5vh;
+      padding:0 1vh;
+  
+      border-radius: 1.5vh;
+      font-size: 4vh;
+  }
+
+
+
+
+
+
+
 
 
 }
@@ -630,17 +732,79 @@
   /* close button on contact form */
   .contact-close-btn{ /* contact-form.css */
     width: 1.8vw;
-    height: 1.8vw;
-    top: -3.5vh;
+    height: auto;
+    top: 1vh;
     left: calc(100% - 3vw);
 
     /* border: 2px solid red; */
   }
-  #closeRnd-btn-svg{ /* svg_icons.css */
-    width: 1.8vw;
-    height: 1.8vw;
-    /* border: 2px solid green; */
+
+
+  /* about button and contact button */
+  .aboutBtn-container{ /* svg-beermat.css */
+    width: 2vw;
+    margin: 0 0.5vw;
   }
+
+  .contactBtn-container{ /* svg-beermat.css */
+    width: 2.5vw;
+    height: auto;
+  }
+
+  .nav-btn{ /* svg-beermat.css svg viewbox is 8wide and 13high*/
+    /* auto only works with width defined */
+    width: 1.5vw;
+    height: auto;
+  }
+
+
+
+
+     /* Contact Form */
+     .contact-form-component{
+      top: 3vh;
+      left: 2vw;
+      width: 90%;
+      border-radius: 2vh;
+  }
+
+  .contact-close-btn{
+      width: 4vh;
+      height: auto;
+      top: 1vh;
+      left: calc(100% - 5vh);
+  }
+
+  .contact-form-title{
+      padding: 1vh;
+      font-size: 5vh;   
+  }
+  .contact-form-wrapper{
+      margin-top: 0vh;
+  }
+  .contact-form-input{
+      height: 4vh;
+      padding: 1vh 1vh;
+      margin: 1vh 0;
+      font-size: 3vh;
+      border-radius: 1.5vh;
+
+  }
+  .contact-form-message{
+      height: 40vh;
+      padding: 1vh;
+  }
+  .submit-btn{
+      margin-top: 0vh;
+
+      width:15vh;
+      height: 5vh;
+      padding:0 1vh;
+  
+      border-radius: 1.5vh;
+      font-size: 4vh;
+  }
+
 
   
 }

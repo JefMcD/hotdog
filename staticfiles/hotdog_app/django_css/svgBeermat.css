@@ -124,8 +124,7 @@
 .nav-btn{
   position: relative;
   display: block;
-  /* width: 8px;
-  height: 13px; */
+  opacity: 0.5;
   width: 4vw;
   height: auto;
   /* border: 2px solid var(--dk-001);  */

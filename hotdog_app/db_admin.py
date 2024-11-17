@@ -73,7 +73,7 @@ def occult_images(request):
         {
             'imgName': 'cthulu-girl-1000.jpg',
             'title' : 'Cthulu Ghirl',
-            'description' : 'Octupus hair girl has much on her mind, what with all the scandals and persecutions that have been going on especially since world war three broke out'
+            'description' : 'Octupus hair girl has much on her mind'
         },
     
         {
@@ -195,36 +195,36 @@ def arch_images(request):
         {
         'imgName': '_large_celtic-v-rangers.jpg',
         'title' : 'Celtic V Rangers',
-        'description' : 'Celtic fans waiting to get into the pub to watch the Old firm game on New Years Day'
+        'description' : 'Celtic fans waiting to get into the pub to watch the Old firm game on New Years Day. 69cm x 40cm Watercolor. Prints £45'
         },
     
         {
         'imgName': '_large_Glasgow-Byres-Rd.jpg',
         'title' : 'Byres Road',
-        'description' : 'A dreech Byers Rd in Glasgows West End'
+        'description' : 'A dreech Byers Rd in Glasgows West End, 60cm x 40cm Watercolor. Prints £45'
         },
         {
         'imgName': '_large_Washington-Arch.jpg',
         'title' : 'Washington Arch',
-        'description' : 'Landmark in New York City'
+        'description' : 'Landmark in New York City.  60cm x 40cm Watercolor. Prints £45'
         },
     
         {
         'imgName': '_large_Hidden-In-Plain-Sight-Colour.jpg',
         'title' : 'Hidden in Plain Sight',
-        'description' : 'Art fair on the railings. Botanical Gardens in Glasgow'
+        'description' : 'Art fair on the railings. Botanical Gardens in Glasgow.  60cm x 40cm Watercolor. Prints £45'
         },    
     
         {
         'imgName': '_large_jintyMgintys.jpg',
         'title' : 'Jinty McGuintys',
-        'description' : 'Famous pub on Ashton Lane'
+        'description' : 'Irish pub on Ashton Lane.  60cm x 40cm Watercolor. Prints £45'
         },
         
         {
         'imgName': '_large_glasgow-cafe-wander.jpg',
         'title' : 'Cafe Wander',
-        'description': 'Occasionally you might have found some of these pictures in this cafe at one time'
+        'description': 'Occasionally you might have found some of these pictures in this cafe at one time.  60cm x 40cm Watercolor. Prints £45'
         },
     ]
     # Note finder is from staticfiles and depends on the staticfiles data
