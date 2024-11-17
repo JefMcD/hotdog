@@ -52,7 +52,7 @@ def install_images(flipper_images, images_folder):
                 # Set file permissions to be more accessible (e.g., 664)
                 # image_path = os.path.join(settings.MEDIA_ROOT, 'flipper_images', pic['imgName']) # MEDIA image stored in /hotdog_app_media/flipper_images/imageName.jpg
                 image_path = os.path.join(settings.MEDIA_ROOT, pic['imgName']) # MEDIA image stored in /hotdog_app_media/imageName.jpg
-                os.chmod(image_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH)  # 644 permissions
+                os.chmod(image_path, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)  # 644 permissions
                 order_number += 1
         else:
             print(f"image_path does not exist: {image_path}")

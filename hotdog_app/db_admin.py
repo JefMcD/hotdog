@@ -246,9 +246,21 @@ def arch_images(request):
 
 @login_required
 def delete_all(request):
+    print(f"##### delete artworks ####")
     Artworks.objects.all().delete()
     cache.clear()
-    return render(request,'hotdog_app/db_admin.html', {'message':'All Pictures Deleted'}) 
+    image_count = Artworks.objects.all().count()
+    print(f"count = {image_count}")
+    if(image_count > 0):
+        db_status = "Pictures Deleted but DB not empty"
+        print(f"remaining images .................")
+        for artwork in Artworks.objects.all():
+            print(f"name: {artwork.title}")
+    else:
+        db_status = "Pictures Deleted and DB Empty"
+
+        
+    return render(request,'hotdog_app/db_admin.html', {'message':db_status}) 
 
 @login_required    
 def inactive(request):
