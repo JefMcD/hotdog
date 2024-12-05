@@ -29,6 +29,127 @@ import os
 from .DB_init_flipper import install_images
 
 
+arch_images_data = [
+    {
+    'imgName': '_large_celtic-v-rangers.jpg',
+    'title' : 'Celtic V Rangers',
+    'description' : 'Celtic fans waiting to get into the pub to watch the Old firm game on New Years Day. 69cm x 40cm Watercolor. Prints £45'
+    },
+
+    {
+    'imgName': '_large_Glasgow-Byres-Rd.jpg',
+    'title' : 'Byres Road',
+    'description' : 'A dreech Byers Rd in Glasgows West End, 60cm x 40cm Watercolor. Prints £45'
+    },
+    {
+    'imgName': '_large_Washington-Arch.jpg',
+    'title' : 'Washington Arch',
+    'description' : 'Landmark in New York City.  60cm x 40cm Watercolor. Prints £45'
+    },
+
+    {
+    'imgName': '_large_Hidden-In-Plain-Sight-Colour.jpg',
+    'title' : 'Hidden in Plain Sight',
+    'description' : 'Art fair on the railings. Botanical Gardens in Glasgow.  60cm x 40cm Watercolor. Prints £45'
+    },    
+
+    {
+    'imgName': '_large_jintyMgintys.jpg',
+    'title' : 'Jinty McGuintys',
+    'description' : 'Irish pub on Ashton Lane.  60cm x 40cm Watercolor. Prints £45'
+    },
+    
+    {
+    'imgName': '_large_glasgow-cafe-wander.jpg',
+    'title' : 'Cafe Wander',
+    'description': 'Occasionally you might have found some of these pictures in this cafe at one time.  60cm x 40cm Watercolor. Prints £45'
+    },
+]
+
+
+occult_images_data = [
+    {
+        'imgName': 'cthulu-girl-1000.jpg',
+        'title' : 'Cthulu Ghirl',
+        'description' : 'Octupus hair girl has much on her mind'
+    },
+
+    {
+        'imgName': 'infinity-eternity-1000.jpg',
+        'title' : 'Infinity Eternity',
+        'description' : 'Space the final frontier ?'
+    },
+
+    {
+        'imgName': 'invocation-1000.jpg',
+        'title' : 'Invocation',
+        'description': 'Summoning the avatar'
+    },
+
+    {
+        'imgName': 'Rivers-Underworld-1000.jpg',
+        'title' : 'Rivers Of The Underworld',
+        'description' : 'Time travel is not so easy'
+    },
+    
+    {
+        'imgName': '_large_echo-reflection.jpg',
+        'title' : 'Echo',
+        'description' : 'Oil on Canvas. 1.5m x 1.5m'
+    },
+
+    {
+        'imgName': '_large_Jessika-In-Oceana.jpg',
+        'title' : 'Escape',
+        'description': 'Ink on paper, 42cm x 29cm'
+    },
+
+    {
+        'imgName': '_large_moments.jpg',
+        'title' : 'Bubbles',
+        'description' : 'Oil on board. 50cm x 30cm'
+    },
+]
+
+
+music_images_data = [
+    {
+    'imgName': 'large_Blondie-Telephone.jpg',
+    'title' : 'Blondie Telephone',
+    'description' : 'Debbie Harry hangin on the telephephone'
+    },
+
+    {
+    'imgName': '_large_Bolan-Hydra.jpg',
+    'title' : 'Marc Bolan',
+    'description': 'T-Rex hydra medusa'
+    },
+
+    {
+    'imgName': '_large_Jimmy-Page-Double-Guitar.jpg',
+    'title' : 'Jimmy Page',
+    'description' : 'Led Zeppelin Stairway to Heaven'
+    },
+        
+    {
+    'imgName': '_large_Angus-Young-Art.jpg',
+    'title' : 'AC/DC Angus',
+    'description' : 'Angus Young of ACDC'
+    },
+
+    {
+    'imgName': '_large_Keith-Richards-Dice.jpg',
+    'title' : 'Keef Richards',
+    'description' : 'Tumblin Dice'
+    },
+    
+    {
+    'imgName': '_large_freddie-mercuryII.jpg',
+    'title' : 'Freddie Mercury',
+    'description' : 'Queens Freedie Mercury'
+    },
+]
+
 
 def db_admin(request):
     # If user is authenticated load db_admin
@@ -69,53 +190,6 @@ def logout_view(request):
 
 @login_required
 def occult_images(request):
-    occult_images_data = [
-        {
-            'imgName': 'cthulu-girl-1000.jpg',
-            'title' : 'Cthulu Ghirl',
-            'description' : 'Octupus hair girl has much on her mind'
-        },
-    
-        {
-            'imgName': 'infinity-eternity-1000.jpg',
-            'title' : 'Infinity Eternity',
-            'description' : 'Space the final frontier ?'
-        },
-    
-        {
-            'imgName': 'invocation-1000.jpg',
-            'title' : 'Invocation',
-            'description': 'Summoning the avatar'
-        },
-
-        {
-            'imgName': 'Rivers-Underworld-1000.jpg',
-            'title' : 'Rivers Of The Underworld',
-            'description' : 'Time travel is not so easy'
-        },
-        
-        {
-            'imgName': '_large_echo-reflection.jpg',
-            'title' : 'Echo',
-            'description' : 'Oil on Canvas. 1.5m x 1.5m'
-        },
-    
-        {
-            'imgName': '_large_Jessika-In-Oceana.jpg',
-            'title' : 'Escape',
-            'description': 'Ink on paper, 42cm x 29cm'
-        },
-
-        {
-            'imgName': '_large_moments.jpg',
-            'title' : 'Bubbles',
-            'description' : 'Oil on board. 50cm x 30cm'
-        },
-        
-        
-    ]
-    
-
     # Note finder is from staticfiles and depends on the staticfiles data
     # ie run ./manage.py collectstatic for this to work
     try:
@@ -130,53 +204,11 @@ def occult_images(request):
     return render(request,'hotdog_app/db_admin.html', {'message':message})
 
 
-
-
-
-
 @login_required
 def music_images(request):
-    music_images_data = [
 
-    
-        {
-        'imgName': 'large_Blondie-Telephone.jpg',
-        'title' : 'Blondie Telephone',
-        'description' : 'Debbie Harry hangin on the telephephone'
-        },
-    
-        {
-        'imgName': '_large_Bolan-Hydra.jpg',
-        'title' : 'Marc Bolan',
-        'description': 'T-Rex hydra medusa'
-        },
-
-        {
-        'imgName': '_large_Jimmy-Page-Double-Guitar.jpg',
-        'title' : 'Jimmy Page',
-        'description' : 'Led Zeppelin Stairway to Heaven'
-        },
-            
-        {
-        'imgName': '_large_Angus-Young-Art.jpg',
-        'title' : 'AC/DC Angus',
-        'description' : 'Angus Young of ACDC'
-        },
-    
-        {
-        'imgName': '_large_Keith-Richards-Dice.jpg',
-        'title' : 'Keef Richards',
-        'description' : 'Tumblin Dice'
-        },
-        
-        {
-        'imgName': '_large_freddie-mercuryII.jpg',
-        'title' : 'Freddie Mercury',
-        'description' : 'Queens Freedie Mercury'
-        },
-    ]
     # Note finders is from staticfiles and depends on the staticfiles data
-    # ie run ./manage.py collectstatic for this to work
+    # ie run ./manage.py collectstatic or copy files to the staticfiles folder manually for this to work
     try:
         images_folder_path = finders.find('hotdog_app/images/pictures/music')
     except:
@@ -191,44 +223,8 @@ def music_images(request):
     
 @login_required
 def arch_images(request):
-    arch_images_data = [
-        {
-        'imgName': '_large_celtic-v-rangers.jpg',
-        'title' : 'Celtic V Rangers',
-        'description' : 'Celtic fans waiting to get into the pub to watch the Old firm game on New Years Day. 69cm x 40cm Watercolor. Prints £45'
-        },
-    
-        {
-        'imgName': '_large_Glasgow-Byres-Rd.jpg',
-        'title' : 'Byres Road',
-        'description' : 'A dreech Byers Rd in Glasgows West End, 60cm x 40cm Watercolor. Prints £45'
-        },
-        {
-        'imgName': '_large_Washington-Arch.jpg',
-        'title' : 'Washington Arch',
-        'description' : 'Landmark in New York City.  60cm x 40cm Watercolor. Prints £45'
-        },
-    
-        {
-        'imgName': '_large_Hidden-In-Plain-Sight-Colour.jpg',
-        'title' : 'Hidden in Plain Sight',
-        'description' : 'Art fair on the railings. Botanical Gardens in Glasgow.  60cm x 40cm Watercolor. Prints £45'
-        },    
-    
-        {
-        'imgName': '_large_jintyMgintys.jpg',
-        'title' : 'Jinty McGuintys',
-        'description' : 'Irish pub on Ashton Lane.  60cm x 40cm Watercolor. Prints £45'
-        },
-        
-        {
-        'imgName': '_large_glasgow-cafe-wander.jpg',
-        'title' : 'Cafe Wander',
-        'description': 'Occasionally you might have found some of these pictures in this cafe at one time.  60cm x 40cm Watercolor. Prints £45'
-        },
-    ]
-    # Note finder is from staticfiles and depends on the staticfiles data
-    # ie run ./manage.py collectstatic for this to work
+    # Note finders is from staticfiles and depends on the staticfiles data
+    # ie run ./manage.py collectstatic or copy files to the staticfiles folder manually for this to work
     try:
         images_folder_path = finders.find('hotdog_app/images/pictures/architecture')
     except:
@@ -237,8 +233,6 @@ def arch_images(request):
     if images_folder_path and os.path.exists(images_folder_path):
         good = install_images(arch_images_data, images_folder_path)
         message = 'Pictures Installed' if good else 'Error installing pictures'
-
-
 
     cache.clear()  # Ensure new data is loaded.
     return render(request,'hotdog_app/db_admin.html', {'message':message})
@@ -264,10 +258,51 @@ def delete_all(request):
 
 @login_required
 def insert_all(request):
-    delete_all(request)
-    music_images(request)
-    arch_images(request)
-    occult_images(request)
+    print(f"##### delete artworks ####")
+    Artworks.objects.all().delete()
+    cache.clear()
+    image_count = Artworks.objects.all().count()
+    if(image_count > 0):
+        db_status = "Pictures Deleted but DB not empty"
+        print(f"remaining images .................")
+        for artwork in Artworks.objects.all():
+            print(f"name: {artwork.title}")
+    else:
+        db_status = "Pictures Deleted and DB Empty"
+    print(f"{db_status}")
+    
+    print(f"insert occult images")
+    try:
+        images_folder_path = finders.find('hotdog_app/images/pictures/occult')
+    except:
+        images_folder_path = None
+    if images_folder_path and os.path.exists(images_folder_path):
+        good = install_images(occult_images_data, images_folder_path)
+        message = 'Pictures Installed' if good else 'Error installing occult pictures'
+
+    print(f"installing music images")
+    try:
+        images_folder_path = finders.find('hotdog_app/images/pictures/music')
+    except:
+        images_folder_path = None
+    if images_folder_path and os.path.exists(images_folder_path):
+        good = install_images(music_images_data, images_folder_path)
+        message = 'Pictures Installed' if good else 'Error installing music pictures'
+
+    try:
+        images_folder_path = finders.find('hotdog_app/images/pictures/architecture')
+    except:
+        images_folder_path = None
+        
+    if images_folder_path and os.path.exists(images_folder_path):
+        good = install_images(arch_images_data, images_folder_path)
+        message = 'Pictures Installed' if good else 'Error installing architecture pictures'
+
+    cache.clear()  # Ensure new data is loaded.
+    return render(request,'hotdog_app/db_admin.html', {'message':message})
+
+
+
     
     
 @login_required    
