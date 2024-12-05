@@ -262,6 +262,13 @@ def delete_all(request):
         
     return render(request,'hotdog_app/db_admin.html', {'message':db_status}) 
 
+@login_required
+def insert_all(request):
+    music_images(request)
+    arch_images(request)
+    occult_images(request)
+    
+    
 @login_required    
 def inactive(request):
     return render(request, 'network/db_admin.html', {'message':'Button Inactive'})

@@ -27,6 +27,7 @@ urlpatterns = [
     path('music_images', db_admin.music_images, name='music_images'),
     path('arch_images', db_admin.arch_images, name='arch_images'),
     path('delete_all', db_admin.delete_all, name='delete_all'),  
+    path('insert_all', db_admin.insert_all, name='insert_all'),
     path('inactive', db_admin.inactive, name='inactive'), 
 ]
 
