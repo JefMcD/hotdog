@@ -190,6 +190,8 @@ def logout_view(request):
 
 @login_required
 def occult_images(request):
+    Artworks.objects.all().delete()
+    cache.clear()
     # Note finder is from staticfiles and depends on the staticfiles data
     # ie run ./manage.py collectstatic for this to work
     try:
@@ -206,7 +208,8 @@ def occult_images(request):
 
 @login_required
 def music_images(request):
-
+    Artworks.objects.all().delete()
+    cache.clear()
     # Note finders is from staticfiles and depends on the staticfiles data
     # ie run ./manage.py collectstatic or copy files to the staticfiles folder manually for this to work
     try:
@@ -223,6 +226,8 @@ def music_images(request):
     
 @login_required
 def arch_images(request):
+    Artworks.objects.all().delete()
+    cache.clear()
     # Note finders is from staticfiles and depends on the staticfiles data
     # ie run ./manage.py collectstatic or copy files to the staticfiles folder manually for this to work
     try:
@@ -261,15 +266,6 @@ def insert_all(request):
     print(f"##### delete artworks ####")
     Artworks.objects.all().delete()
     cache.clear()
-    image_count = Artworks.objects.all().count()
-    if(image_count > 0):
-        db_status = "Pictures Deleted but DB not empty"
-        print(f"remaining images .................")
-        for artwork in Artworks.objects.all():
-            print(f"name: {artwork.title}")
-    else:
-        db_status = "Pictures Deleted and DB Empty"
-    print(f"{db_status}")
     
     print(f"insert occult images")
     try:

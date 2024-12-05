@@ -23,7 +23,7 @@ def install_images(flipper_images, images_folder):
     print (f"---------> image_folder = {images_folder}")
     
     # delete all from artworks
-    Artworks.objects.all().delete()
+    # Artworks.objects.all().delete()
     
     # install pictures into database
     order_number = Artworks.objects.count()
